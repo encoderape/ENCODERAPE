@@ -1,0 +1,20 @@
+{
+  "name": "encoderape",
+  "version": "0.0.0",
+  "description": "Web Development Company",
+  "main": "index.js",
+  "scripts": {
+    "start:front": "cd frontend && npm start",
+    "start:back": "cd backend && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goomapps/ENCODERAPE.git"
+  },
+  "author": "ENCODERAPE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goomapps/ENCODERAPE/issues"
+  },
+  "homepage": "https://github.com/goomapps/ENCODERAPE#readme"
+}
