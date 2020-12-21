@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "version": "0.0.0",
+  "description": "Backend ENCODERAPE",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "Backend"
+  ],
+  "author": "ENCODERAPE",
+  "license": "ISC"
+}
