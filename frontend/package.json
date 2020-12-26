@@ -10,6 +10,19 @@
     "e2e": "ng e2e"
   },
   "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js,css,scss,html,json,yaml}": [
+      "prettier --write"
+    ],
+    "*.{ts,js}": [
+      "tslint --fix"
+    ]
+  },
   "dependencies": {
     "@angular/animations": "~11.0.4",
     "@angular/common": "~11.0.4",
