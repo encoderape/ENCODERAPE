@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ape-navigator',
   templateUrl: './navigator.component.html',
   styleUrls: ['./navigator.component.scss'],
 })
-export class NavigatorComponent implements OnInit {
+export class NavigatorComponent {
   constructor() {}
-
-  ngOnInit(): void {}
 }
