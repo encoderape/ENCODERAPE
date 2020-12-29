@@ -1,0 +1,19 @@
+@import "src/app/styles/index.scss";
+
+.cabecera {
+  width: 100%;
+  background-color: $components-dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-contenedor {
+    display: flex;
+    padding: 10px;
+
+    & img {
+      width: 300px;
+      height: 95px;
+    }
+  }
+}
