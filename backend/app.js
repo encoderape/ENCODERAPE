@@ -8,6 +8,7 @@ const CORS = require('./middlewares/cors.js');
 const CATALOGO = require('./routes/_catalogo.js');
 const CONTACTO = require('./routes/_contacto.js');
 const USUARIO = require('./routes/_usuario.js');
+const PORTFOLIO = require('./routes/_portfolio.js');
 
 const APP = EXPRESS();
 const PORT = process.env.PORT || 3000;
@@ -25,6 +26,7 @@ APP.use(CORS);
 APP.use('/catalogo', CATALOGO);
 APP.use('/contacto', CONTACTO);
 APP.use('/usuario', USUARIO);
+APP.use('/portfolio', PORTFOLIO);
 
 // LISTENER
 APP.listen(PORT, () => {
