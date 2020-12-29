@@ -1,0 +1,43 @@
+@import "src/app/styles/index.scss";
+
+.main {
+  width: 100%;
+
+  &-contenedor {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &-top {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+
+      .imagen {
+        width: 100%;
+        height: 650px;
+        opacity: 0.5;
+      }
+      .opcion {
+        position: absolute;
+        top: 40%;
+        width: 100%;
+        text-align: center;
+
+        &-titulo {
+          color: $text-color-dark;
+        }
+
+        &-boton {
+          //width: 120px;
+          //height: 30px;
+          background: transparent;
+          border: 2px solid $emphasis-color;
+          color: $emphasis-color;
+          margin-top: 50px;
+          padding: 10px 30px 10px 30px;
+        }
+      }
+    }
+  }
+}
