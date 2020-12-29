@@ -45,7 +45,7 @@ const CONTROLADOR = {
     },
     async update(req, res) {
         try {
-            let catalogo = await CATALOGO.findByIdAndUpdate(req.body._id, req.body);
+            let catalogo = await CATALOGO.findByIdAndUpdate({_id: req.params._id}, req.body);
             res.status(200).send({
                 message: "Catalogo actualizado correctamente.",
                 catalogo,
@@ -59,7 +59,7 @@ const CONTROLADOR = {
     },
     async delete(req, res) {
         try {
-            let catalogo = await CATALOGO.findByIdAndDelete(req.body._id);
+            let catalogo = await CATALOGO.findByIdAndDelete({_id: req.params._id});
             res.status(200).send({
                 message: "Catalogo eliminado correctamente.",
                 catalogo,
