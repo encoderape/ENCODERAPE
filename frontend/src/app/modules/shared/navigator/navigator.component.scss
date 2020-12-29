@@ -1,0 +1,36 @@
+@import "src/app/styles/index.scss";
+
+.navegador {
+  width: 100%;
+  background-color: $components-dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .menu {
+    display: flex;
+    list-style: none;
+
+    &-item {
+      margin: 10px 3px 4px 3px;
+
+      & a {
+        text-decoration: none;
+
+        & p {
+          color: $text-color-light;
+          padding: 2px 8px;
+          transition: 0.3s;
+
+          &:hover,
+          &:focus {
+            transform: translateY(9px);
+            background-color: $emphasis-color;
+            color: $text-color-dark;
+            box-shadow: 0 1px 3px $components-dark;
+          }
+        }
+      }
+    }
+  }
+}
