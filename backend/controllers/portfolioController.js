@@ -1,4 +1,3 @@
-const { update } = require('../models/portfolioDTO');
 const PORTFOLIO = require('../models/portfolioDTO');
 
 const CONTROLADOR = {
@@ -6,12 +5,12 @@ const CONTROLADOR = {
         try {
             let portfolio = await PORTFOLIO.create(req.body);
             res.status(201).send({
-                message: "Portfolio añadido correctamente",
+                message: "Portfolio añadido correctamente.",
                 portfolio,
             });
         } catch (e) {
             res.status(400).send({
-                message: "Error al añadir el portfolio",
+                message: "Error al añadir el portfolio.",
                 e,
             });
         }
@@ -20,12 +19,12 @@ const CONTROLADOR = {
         try {
             let portfolio = await PORTFOLIO.find({ });
             res.status(201).send({
-                message: "Portfolios recogidos correctamente",
+                message: "Portfolios recogidos correctamente.",
                 portfolio,
             });
         } catch (e) {
             res.status(400).send({
-                message: "Error al recoger los portfolios",
+                message: "Error al recoger los portfolios.",
                 e,
             });
         }
@@ -34,12 +33,12 @@ const CONTROLADOR = {
         try {
             let portfolio = await PORTFOLIO.findById({_id: req.params._id});
             res.status(200).send({
-                message: "Portfolio recogido correctamente",
+                message: "Portfolio recogido correctamente.",
                 portfolio,
             });
         } catch (e) {
             res.status(500).send({
-                message: "Error al recoger el portfolio",
+                message: "Error al recoger el portfolio.",
                 e,
             });
         }
@@ -62,12 +61,12 @@ const CONTROLADOR = {
         try {
             let portfolio = await PORTFOLIO.findByIdAndDelete(req.body._id);
             res.status(200).send({
-                message: "Portfolio eliminado correctamente",
+                message: "Portfolio eliminado correctamente.",
                 portfolio,
             });
         } catch (e) {
             res.status(500).send({
-                message: "Error al eliminar el portfolio",
+                message: "Error al eliminar el portfolio.",
                 e,
             });
         }

@@ -5,12 +5,12 @@ const CONTROLADOR = {
         try {
             let catalogo = await CATALOGO.create(req.body);
             res.status(201).send({
-                message: "Catalogo añadido correctamente",
+                message: "Catalogo añadido correctamente.",
                 catalogo,
             });
         } catch (e) {
             res.status(400).send({
-                message: "Error al añadir el catalogo",
+                message: "Error al añadir el catalogo.",
                 e,
             });
         }
@@ -19,12 +19,12 @@ const CONTROLADOR = {
         try {
             let catalogos = await CATALOGO.find({ });
             res.status(200).send({
-                message: "Catálogos recogidos correctamente",
+                message: "Catálogos recogidos correctamente.",
                 catalogos,
             });
         } catch (e) {
             res.status(500).send({
-                message: "Error al recoger los catálogos",
+                message: "Error al recoger los catálogos.",
                 e,
             });
         }
@@ -33,12 +33,12 @@ const CONTROLADOR = {
         try {
             let catalogo = await CATALOGO.findById({_id: req.params._id});
             res.status(200).send({
-                message: "Catalogo recogido correctamente",
+                message: "Catalogo recogido correctamente.",
                 catalogo,
             });
         } catch (e) {
             res.status(500).send({
-                message: "Error al recoger el catalogo",
+                message: "Error al recoger el catalogo.",
                 e,
             });
         }
@@ -47,12 +47,12 @@ const CONTROLADOR = {
         try {
             let catalogo = await CATALOGO.findByIdAndUpdate(req.body._id, req.body);
             res.status(200).send({
-                message: "Catalogo actualizado correctamente",
+                message: "Catalogo actualizado correctamente.",
                 catalogo,
             });
         } catch (e) {
             res.status(400).send({
-                message: "Error al actualizar el catalogo",
+                message: "Error al actualizar el catalogo.",
                 e,
             });
         }
@@ -61,12 +61,12 @@ const CONTROLADOR = {
         try {
             let catalogo = await CATALOGO.findByIdAndDelete(req.body._id);
             res.status(200).send({
-                message: "Catalogo eliminado correctamente",
+                message: "Catalogo eliminado correctamente.",
                 catalogo,
             });
         } catch (e) {
             res.status(500).send({
-                message: "Error al eliminar el catalogo",
+                message: "Error al eliminar el catalogo.",
                 e,
             });
         }

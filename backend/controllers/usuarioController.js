@@ -5,12 +5,12 @@ const CONTROLADOR = {
         try {
             let usuario = await USUARIO.create(req.body);
             res.status(201).send({
-                message: "Usuario añadido correctamente",
+                message: "Usuario añadido correctamente.",
                 usuario,
             });
         } catch (e) {
             res.status(400).send({
-                message: "Error al añadir el usuario",
+                message: "Error al añadir el usuario.",
                 e,
             });
         }
@@ -19,12 +19,12 @@ const CONTROLADOR = {
         try {
             let usuarios = await USUARIO.find({ });
             res.status(200).send({
-                message: "Usuarios recogidos correctamente",
+                message: "Usuarios recogidos correctamente.",
                 usuarios,
             });
         } catch (e) {
             res.status(500).send({
-                message: "Error al recoger los usuarios",
+                message: "Error al recoger los usuarios.",
                 e,
             });
         }
@@ -33,12 +33,12 @@ const CONTROLADOR = {
         try {
             let usuario = await USUARIO.findById({_id: req.params._id});
             res.status(200).send({
-                message: "Usuario recogido correctamente",
+                message: "Usuario recogido correctamente.",
                 usuario,
             });
         } catch (e) {
             res.status(500).send({
-                message: "Error al recoger el usuario",
+                message: "Error al recoger el usuario.",
                 e,
             });
         }
@@ -47,12 +47,12 @@ const CONTROLADOR = {
         try {
             let usuario = await USUARIO.findByIdAndUpdate(req.body._id, req.body);
             res.status(200).send({
-                message: "Usuario actualizado correctamente",
+                message: "Usuario actualizado correctamente.",
                 usuario,
             });
         } catch (e) {
             res.status(400).send({
-                message: "Error al actualizar el usuario",
+                message: "Error al actualizar el usuario.",
                 e,
             });
         }
@@ -61,12 +61,12 @@ const CONTROLADOR = {
         try {
             let usuario = await USUARIO.findByIdAndDelete(req.body._id);
             res.status(200).send({
-                message: "Usuario eliminado correctamente",
+                message: "Usuario eliminado correctamente.",
                 usuario,
             });
         } catch (e) {
             res.status(500).send({
-                message: "Error al eliminar el usuario",
+                message: "Error al eliminar el usuario.",
                 e,
             });
         }
