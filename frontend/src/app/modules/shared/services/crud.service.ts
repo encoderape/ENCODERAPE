@@ -29,12 +29,12 @@ export class CrudService {
     return this.http.get(`${this.apiRest}/read/${itemId}`);
   }
 
-  updateById(itemId: string, item: object): Observable<object> {
-    return this.http.put(`${this.apiRest}/update/${itemId}`, item);
+  update(item: object): Observable<object> {
+    return this.http.put(`${this.apiRest}/update`, item);
   }
 
-  deleteById(itemId: string): Observable<object> {
-    return this.http.delete(`${this.apiRest}/delete/${itemId}`);
+  delete(item: object): Observable<object> {
+    return this.http.delete(`${this.apiRest}/delete`, item);
   }
 
   private setUrlPrefix(urlPrefix: string): void {
