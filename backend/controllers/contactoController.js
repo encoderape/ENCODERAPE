@@ -45,7 +45,7 @@ const CONTROLADOR = {
     },
     async delete(req, res) {
         try {
-            let contacto = await CONTACTO.findByIdAndDelete({_id: req.params._id});
+            let contacto = await CONTACTO.findByIdAndDelete(req.body._id);
             res.status(200).send({
                 message: "Contacto eliminado correctamente.",
                 contacto,

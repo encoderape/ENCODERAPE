@@ -45,7 +45,7 @@ const CONTROLADOR = {
     },
     async update(req, res){
         try{
-            let portfolio = await PORTFOLIO.findByIdAndUpdate({_id: req.params._id}, req.body);
+            let portfolio = await PORTFOLIO.findByIdAndUpdate(req.body._id, req.body);
             res.status(200).send({
                 message: "Portfolio actualizado correctamente.",
                 portfolio,
@@ -59,7 +59,7 @@ const CONTROLADOR = {
     },
     async delete(req, res) {
         try {
-            let portfolio = await PORTFOLIO.findByIdAndDelete({_id: req.params._id});
+            let portfolio = await PORTFOLIO.findByIdAndDelete(req.body._id);
             res.status(200).send({
                 message: "Portfolio eliminado correctamente.",
                 portfolio,
