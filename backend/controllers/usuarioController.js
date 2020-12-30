@@ -45,7 +45,7 @@ const CONTROLADOR = {
     },
     async update(req, res) {
         try {
-            let usuario = await USUARIO.findByIdAndUpdate({_id: req.params._id}, req.body);
+            let usuario = await USUARIO.findByIdAndUpdate(req.body._id, req.body);
             res.status(200).send({
                 message: "Usuario actualizado correctamente.",
                 usuario,
@@ -59,7 +59,7 @@ const CONTROLADOR = {
     },
     async delete(req, res) {
         try {
-            let usuario = await USUARIO.findByIdAndDelete({_id: req.params._id});
+            let usuario = await USUARIO.findByIdAndDelete(req.body._id);
             res.status(200).send({
                 message: "Usuario eliminado correctamente.",
                 usuario,
