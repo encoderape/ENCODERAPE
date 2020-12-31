@@ -2,25 +2,60 @@ h1 {
   font-family: "Titillium Web", sans-serif;
   font-size: 22px;
   font-weight: 800;
+  color: $text-color-dark;
 }
 
 h2 {
   font-family: "Titillium Web", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: $text-color-dark;
 }
 
 h3 {
   font-family: "Titillium Web", sans-serif;
   font-size: 18px;
   font-weight: 600;
+  color: $text-color-dark;
 }
 
 p {
   font-family: "Titillium Web", sans-serif;
   font-size: 16px;
   font-weight: 400;
+  color: $text-color-dark;
+}
+
+label {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: $text-color-dark;
 }
 
 button {
   font-size: 16px;
   font-weight: 800;
+  color: $text-color-dark;
+}
+
+input {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: $text-color-dark;
+}
+
+textarea {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: $text-color-dark;
+}
+
+small {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: $text-color-dark;
 }

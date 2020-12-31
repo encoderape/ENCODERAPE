@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
 import { CrudService } from 'src/app/modules/shared/services/crud.service';
 import { PREFIX } from 'src/app/modules/shared/config/webApiPrefix.config';
 
@@ -13,7 +15,7 @@ export class ContactoService {
     this.crud.withUrlPrefix(PREFIX.contacto);
   }
 
-  create(item: Contacto): void {
-    this.crud.create(item);
+  create(item: Contacto): Observable<object> {
+    return this.crud.create(item);
   }
 }

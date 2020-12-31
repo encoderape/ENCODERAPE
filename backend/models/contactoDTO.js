@@ -13,7 +13,7 @@ const CONTACTO = new MONGOOSE.Schema(
             type: String,
         },
         tipo: {
-            type: String,
+            type: [String],
         },
         descripcion: {
             type: String,

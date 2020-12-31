@@ -1,0 +1,209 @@
+<div class="contenedor">
+  <h2 class="title">Tu idea está apunto de conocer a nuestros expertos!</h2>
+  <div class="contenedor-contacto">
+    <form class="contacto" #contactoForm="ngForm">
+      <div class="contacto-cabecera">
+        <p class="subtitle">
+          Por favor rellene el siguiente formulario y nuestro equipo le
+          contestará en la mayor brevedad de tiempo.
+        </p>
+      </div>
+      <div class="contacto-formulario">
+        <div class="dato">
+          <label class="dato-etiqueta" for="nombre">
+            Nombre*
+            <input
+              class="input"
+              id="nombre"
+              type="text"
+              name="nombre"
+              #nombre="ngModel"
+              [(ngModel)]="contacto.nombre"
+              placeholder="Alejandro Moreno"
+              required
+            />
+            <i class="fas fa-user input-icon"></i>
+          </label>
+          <label class="dato-etiqueta" for="telefono">
+            Teléfono*
+            <input
+              class="input"
+              id="telefono"
+              type="text"
+              name="telefono"
+              #telefono="ngModel"
+              [(ngModel)]="contacto.telefono"
+              placeholder="666 666 666"
+              required
+            />
+            <i class="fas fa-phone input-icon"></i>
+          </label>
+          <label class="dato-etiqueta" for="correo">
+            Correo electrónico*
+            <input
+              class="input"
+              id="correo"
+              type="email"
+              name="correo"
+              #correo="ngModel"
+              [(ngModel)]="contacto.correo"
+              placeholder="nombre@dominio.com"
+              required
+            />
+            <i class="fas fa-envelope input-icon"></i>
+          </label>
+        </div>
+        <div class="tipo">
+          <label
+            class="tipo-etiqueta"
+            for="web"
+            [ngClass]="{ active: web.value === true }"
+          >
+            <i class="fas fa-laptop checkbox-icon"></i>
+            <input
+              class="checkbox"
+              id="web"
+              type="checkbox"
+              name="web"
+              #web="ngModel"
+              [(ngModel)]="contacto.tipo[0]"
+            />
+            Aplicación Web
+          </label>
+          <label
+            class="tipo-etiqueta"
+            for="mobile"
+            [ngClass]="{ active: mobile.value === true }"
+          >
+            <i class="fas fa-mobile-alt checkbox-icon"></i>
+            <input
+              class="checkbox"
+              id="mobile"
+              type="checkbox"
+              name="mobile"
+              #mobile="ngModel"
+              [(ngModel)]="contacto.tipo[1]"
+            />
+            Aplicación Móvil
+          </label>
+          <label
+            class="tipo-etiqueta"
+            for="design"
+            [ngClass]="{ active: design.value === true }"
+          >
+            <i class="fas fa-pencil-ruler checkbox-icon"></i>
+            <input
+              class="checkbox"
+              id="design"
+              type="checkbox"
+              name="design"
+              #design="ngModel"
+              [(ngModel)]="contacto.tipo[2]"
+            />
+            UX/UI
+          </label>
+          <label
+            class="tipo-etiqueta"
+            for="analysis"
+            [ngClass]="{ active: analysis.value === true }"
+          >
+            <i class="fas fa-search checkbox-icon"></i>
+            <input
+              class="checkbox"
+              id="analysis"
+              type="checkbox"
+              name="analysis"
+              #analysis="ngModel"
+              [(ngModel)]="contacto.tipo[3]"
+            />
+            Análisis de Proyectos
+          </label>
+          <label
+            class="tipo-etiqueta"
+            for="consulting"
+            [ngClass]="{ active: consulting.value === true }"
+          >
+            <i class="fas fa-comments checkbox-icon"></i>
+            <input
+              class="checkbox"
+              id="consulting"
+              type="checkbox"
+              name="consulting"
+              #consulting="ngModel"
+              [(ngModel)]="contacto.tipo[4]"
+            />
+            Consultoria
+          </label>
+        </div>
+        <div class="descripcion">
+          <label class="descripcion-etiqueta" for="descripcion">
+            Cuentanos sobre tu idea*
+            <textarea
+              class="textarea"
+              id="descripcion"
+              type="text"
+              name="descripcion"
+              #descripcion="ngModel"
+              [(ngModel)]="contacto.descripcion"
+              placeholder="Mi idea es ..."
+              maxlength="500"
+              required
+            ></textarea>
+          </label>
+        </div>
+        <div class="terminos">
+          <label class="terminos-etiqueta" for="terminos">
+            <div>
+              <input
+                class="checkbox"
+                id="terminos"
+                type="checkbox"
+                name="terminos"
+                #terminos="ngModel"
+                [(ngModel)]="contacto.terminos"
+                required
+              />
+            </div>
+            <small
+              >La información que proporcione se utilizará para ponerse en
+              contacto con usted sobre los servicios de EncoderApe. Le
+              enviaremos únicamente información relevante. Respetamos su
+              privacidad y nunca venderemos su información a terceros (consulte
+              nuestra Política de privacidad). Puede darse de baja de estas
+              comunicaciones en cualquier momento.</small
+            >
+          </label>
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="boton"
+        [disabled]="contactoForm.invalid"
+        (click)="doSubmit()"
+      >
+        <label>ENVIAR</label>
+      </button>
+    </form>
+    <div class="informacion">
+      <div class="informacion-cabecera">
+        <p class="subtitle">
+          También puedes enviarnos un correo o llamarnos por teléfono
+        </p>
+      </div>
+      <div class="informacion-contacto">
+        <div>
+          <p>Correo electrónico de contacto:</p>
+          <p class="importante">ape@encoderape.com</p>
+        </div>
+        <div>
+          <p>Alejandro González:</p>
+          <p class="importante">648183931</p>
+        </div>
+        <div>
+          <p>Ramses Moreno:</p>
+          <p class="importante">630149142</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
