@@ -6,11 +6,9 @@
   &-contenedor {
     display: flex;
     flex-direction: column;
-    width: 100%;
 
     &-arriba {
       position: relative;
-      width: 100%;
       height: 600px;
       .imagen {
         width: 100%;
@@ -40,21 +38,6 @@
       }
     }
 
-    &-clientes {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: $text-color-light;
-      background-color: $components-dark;
-      padding-top: 60px;
-      padding-bottom: 60px;
-
-      .contenedor-logos {
-        margin-top: 30px;
-      }
-    }
-
     &-servicios {
       display: flex;
       flex-direction: row;
@@ -63,16 +46,13 @@
       margin-top: 70px;
       margin-bottom: 70px;
 
-      .contenedor-web {
-        margin-left: 15%;
-      }
       .item {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: auto;
-        opacity: 0.4;
+        opacity: 0.5;
 
         .icono {
           font-size: 60px;
@@ -83,6 +63,24 @@
       .item:hover {
         opacity: 1;
         transition: opacity 0.5s;
+      }
+    }
+
+    &-clientes {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $text-color-light;
+      background-color: $components-dark;
+      padding-top: 60px;
+      padding-bottom: 60px;
+
+      .titulo {
+        color: $text-color-light;
+      }
+      .contenedor-logos {
+        margin-top: 30px;
       }
     }
 
