@@ -37,6 +37,19 @@
       margin: 20px 10px;
 
       &-etiqueta {
+        &.invalid {
+          .input {
+            border-bottom-color: $color-error;
+            box-shadow: 0 2px $color-error;
+          }
+
+          .input-icon {
+            color: $color-error;
+            border-bottom-color: $color-error;
+            box-shadow: 0 2px $color-error;
+          }
+        }
+
         .input {
           width: 250px;
           border: transparent;
@@ -185,6 +198,11 @@
     border: 3px solid $emphasis-color;
     cursor: pointer;
     transition: 0.5s;
+
+    &.disabled {
+      border-color: grey;
+      pointer-events: none;
+    }
 
     & label {
       transition: 0.5s;

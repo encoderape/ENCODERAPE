@@ -10,7 +10,13 @@
       </div>
       <div class="contacto-formulario">
         <div class="dato">
-          <label class="dato-etiqueta" for="nombre">
+          <label
+            class="dato-etiqueta"
+            for="nombre"
+            [ngClass]="{
+              invalid: nombre.invalid && (nombre.dirty || nombre.touched)
+            }"
+          >
             Nombre*
             <input
               class="input"
@@ -21,10 +27,17 @@
               [(ngModel)]="contacto.nombre"
               placeholder="Alejandro Moreno"
               required
+              text
             />
             <i class="fas fa-user input-icon"></i>
           </label>
-          <label class="dato-etiqueta" for="telefono">
+          <label
+            class="dato-etiqueta"
+            for="telefono"
+            [ngClass]="{
+              invalid: telefono.invalid && (telefono.dirty || telefono.touched)
+            }"
+          >
             Teléfono*
             <input
               class="input"
@@ -35,10 +48,17 @@
               [(ngModel)]="contacto.telefono"
               placeholder="666 666 666"
               required
+              num
             />
             <i class="fas fa-phone input-icon"></i>
           </label>
-          <label class="dato-etiqueta" for="correo">
+          <label
+            class="dato-etiqueta"
+            for="correo"
+            [ngClass]="{
+              invalid: correo.invalid && (correo.dirty || correo.touched)
+            }"
+          >
             Correo electrónico*
             <input
               class="input"
@@ -49,6 +69,7 @@
               [(ngModel)]="contacto.correo"
               placeholder="nombre@dominio.com"
               required
+              email
             />
             <i class="fas fa-envelope input-icon"></i>
           </label>
@@ -178,6 +199,7 @@
       <button
         type="submit"
         class="boton"
+        [ngClass]="{ disabled: contactoForm.invalid }"
         [disabled]="contactoForm.invalid"
         (click)="doSubmit()"
       >
