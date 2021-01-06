@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TitleService } from './modules/shared/services/title.service';
+
+import { TitleService } from 'src/app/modules/shared/services/title.service';
 
 @Component({
   selector: 'ape-root',

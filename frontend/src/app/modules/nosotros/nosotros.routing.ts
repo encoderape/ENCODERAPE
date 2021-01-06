@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-import { NosotrosComponent } from './nosotros/nosotros.component';
+import { NosotrosComponent } from 'src/app/modules/nosotros/nosotros/nosotros.component';
 
 const routes: Routes = [{ path: '', component: NosotrosComponent }];
 

@@ -4,9 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRouting } from 'src/app/app.routing';
-
 import { AppComponent } from 'src/app/app.component';
-
 import { SharedModule } from 'src/app/modules/shared/shared.module';
 
 @NgModule({

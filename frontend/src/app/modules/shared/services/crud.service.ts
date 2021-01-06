@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { Observable } from 'rxjs';
 
 import { BASEURL } from 'src/app/modules/shared/config/webApiPrefix.config';
