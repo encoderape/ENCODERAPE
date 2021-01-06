@@ -14,3 +14,69 @@
   align-items: center;
   flex-grow: 1;
 }
+
+.toast {
+  visibility: hidden;
+  min-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 50%;
+  bottom: 25px;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @keyframes fadeUp {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+    to {
+      bottom: 25px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeDown {
+    from {
+      bottom: 25px;
+      opacity: 1;
+    }
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+  &.error {
+    background-color: $color-error;
+  }
+
+  &.info {
+    background-color: $color-info;
+  }
+
+  &.success {
+    background-color: $color-success;
+  }
+
+  &.warning {
+    background-color: $color-warning;
+  }
+  &-text {
+    margin-right: 10px;
+  }
+
+  &-icon {
+    margin-left: 10px;
+  }
+
+  &.show {
+    visibility: visible;
+    animation: fadeUp 0.5s, fadeDown 0.5s 2.5s;
+  }
+}

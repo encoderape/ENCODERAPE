@@ -10,6 +10,10 @@ import { FooterComponent } from './footer/footer.component';
 import { NumDirective } from './validators/num/num.directive';
 import { TextDirective } from './validators/text/text.directive';
 import { EmailDirective } from './validators/email/email.directive';
+import { SuccessfulComponent } from './toasts/successful/successful.component';
+import { WarningComponent } from './toasts/warning/warning.component';
+import { InfoComponent } from './toasts/info/info.component';
+import { ErrorComponent } from './toasts/error/error.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,10 @@ import { EmailDirective } from './validators/email/email.directive';
     NumDirective,
     TextDirective,
     EmailDirective,
+    SuccessfulComponent,
+    WarningComponent,
+    InfoComponent,
+    ErrorComponent,
   ],
   exports: [
     HeaderComponent,
@@ -29,6 +37,10 @@ import { EmailDirective } from './validators/email/email.directive';
     NumDirective,
     TextDirective,
     EmailDirective,
+    SuccessfulComponent,
+    WarningComponent,
+    ErrorComponent,
+    InfoComponent,
   ],
   imports: [CommonModule, SharedRouting],
 })
