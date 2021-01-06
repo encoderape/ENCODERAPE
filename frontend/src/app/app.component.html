@@ -2,7 +2,7 @@
   <ape-header></ape-header>
   <ape-navigator class="sticky"></ape-navigator>
   <div class="layout">
-    <router-outlet></router-outlet>
+    <router-outlet (activate)="onActivate()"></router-outlet>
   </div>
   <ape-footer></ape-footer>
 </div>
