@@ -31,6 +31,21 @@ export class ContactoComponent implements OnInit {
   ngOnInit(): void {}
 
   doSubmit(): void {
+    if (this.contacto.tipo[0]) {
+      this.contacto.tipo[0] = 'Apliación Web';
+    }
+    if (this.contacto.tipo[1]) {
+      this.contacto.tipo[1] = 'Apliación Móvil';
+    }
+    if (this.contacto.tipo[2]) {
+      this.contacto.tipo[2] = 'UX/UI';
+    }
+    if (this.contacto.tipo[3]) {
+      this.contacto.tipo[3] = 'Análisis de Proyectos';
+    }
+    if (this.contacto.tipo[4]) {
+      this.contacto.tipo[4] = 'Consultoria';
+    }
     this.contactoService.create(this.contacto).subscribe({
       next: (data) => {
         this.toastService.callSuccessfulToast('Formulario enviado con éxito');
