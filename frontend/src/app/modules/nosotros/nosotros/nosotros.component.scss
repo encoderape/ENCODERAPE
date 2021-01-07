@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     margin: 60px 0 60px 0;
 
     &-caracteristicas {
@@ -48,29 +49,43 @@
       justify-content: center;
       align-items: center;
       width: 100%;
+      background-color: $text-color-dark;
       margin: 60px 0 60px 0;
 
-      .item {
+      .bloque {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 300px;
-        margin: auto;
+        justify-content: center;
+        width: 50%;
+        margin-bottom: 50px;
 
-        &-icono {
-          font-size: 30px;
-          color: $emphasis-color;
-        }
+        .item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-top: 50px;
 
-        &-titulo {
-          color: $text-color-dark;
-          font-size: 22px;
-          margin: 10px 0 10px 0;
-        }
+          &-icono {
+            font-size: 30px;
+            color: $emphasis-color;
+          }
 
-        &-texto {
-          width: 250px;
-          text-align: center;
+          &-titulo {
+            color: $text-color-light;
+            font-size: 22px;
+            margin: 10px 0 10px 0;
+          }
+
+          &-texto {
+            width: 70%;
+            text-align: center;
+
+            .texto {
+              color: $text-color-light;
+            }
+          }
         }
       }
     }
@@ -86,12 +101,21 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
         margin: auto;
 
         &-imagen {
           width: 130px;
           height: 200px;
         }
+      }
+    }
+
+    &-portfolio {
+      .ramses {
+        width: 90%;
+        background-color: $components-dark;
+        margin: 50px 0 50px 0;
       }
     }
   }
