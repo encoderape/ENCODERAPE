@@ -3,10 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppRouting } from './app.routing';
-
-import { AppComponent } from './app.component';
-import { SharedModule } from './modules/shared/shared.module';
+import { AppRouting } from 'src/app/app.routing';
+import { AppComponent } from 'src/app/app.component';
+import { SharedModule } from 'src/app/modules/shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,5 +19,6 @@ import { SharedModule } from './modules/shared/shared.module';
   ],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [],
 })
 export class AppModule {}

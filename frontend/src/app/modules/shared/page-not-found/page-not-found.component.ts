@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ape-page-not-found',
@@ -6,7 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-not-found.component.scss'],
 })
 export class PageNotFoundComponent implements OnInit {
-  constructor() {}
+  private redirectCount = 5;
 
-  ngOnInit(): void {}
+  constructor(private router: Router) {}
+
+  public get redirectMessage(): string {
+    if (this.redirectCount <= 0) {
+      return 'Redireccionando ...';
+    }
+    return `Redireccionándote a la página principal ${this.redirectCount}`;
+  }
+
+  ngOnInit(): void {
+    setInterval(() => {
+      this.redirectCount--;
+      if (this.redirectCount <= 0) {
+        this.router.navigate(['']);
+      }
+    }, 1000);
+  }
 }

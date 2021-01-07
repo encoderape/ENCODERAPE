@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-import { ContactoComponent } from './contacto/contacto.component';
+import { ContactoComponent } from 'src/app/modules/contacto/contacto/contacto.component';
 
 const routes: Routes = [{ path: '', component: ContactoComponent }];
 

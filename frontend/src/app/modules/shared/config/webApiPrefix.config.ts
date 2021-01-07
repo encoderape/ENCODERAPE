@@ -1,5 +1,5 @@
-import { IWebApiPrefix } from 'src/app/modules/shared/interfaces/webApiPrefix.interface';
 import { environment } from 'src/environments/environment';
+import { IWebApiPrefix } from 'src/app/modules/shared/interfaces/webApiPrefix.interface';
 
 const webApiPrefixes: IWebApiPrefix = {
   catalogo: 'catalogo',

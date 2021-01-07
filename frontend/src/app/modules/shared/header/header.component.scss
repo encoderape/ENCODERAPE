@@ -1,4 +1,4 @@
-@import "src/app/styles/index.scss";
+@import "src/app/styles";
 
 .cabecera {
   width: 100%;
@@ -13,6 +13,7 @@
     & img {
       width: 280px;
       height: 85px;
+      cursor: pointer;
     }
   }
 }
