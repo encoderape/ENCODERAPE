@@ -29,7 +29,7 @@ export class WarningComponent implements OnInit {
     this.title = 'CUIDADO';
 
     const $subscription = of(null)
-      .pipe(delay(4500))
+      .pipe(delay(4000))
       .subscribe({
         complete: () => {
           this.isShown = false;

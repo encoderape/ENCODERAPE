@@ -23,7 +23,6 @@ export class PageNotFoundComponent implements OnInit {
   }
 
   redirect(): void {
-    console.log('hola');
     setInterval(() => {
       this.redirectCount--;
       if (this.redirectCount <= 0) {

@@ -29,7 +29,7 @@ export class ErrorComponent implements OnInit {
     this.title = 'ERROR';
 
     const $subscription = of(null)
-      .pipe(delay(4500))
+      .pipe(delay(4000))
       .subscribe({
         complete: () => {
           this.isShown = false;
