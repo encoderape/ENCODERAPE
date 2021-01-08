@@ -6,6 +6,7 @@
   &-contenedor {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     &-arriba {
       position: relative;
@@ -40,29 +41,62 @@
 
     &-servicios {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin-top: 70px;
-      margin-bottom: 70px;
+      width: 100%;
+      margin: 50px 0 60px 0;
 
-      .item {
+      .items {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
         align-items: center;
-        margin: auto;
-        opacity: 0.5;
+        width: 80%;
+        margin: 70px 0 70px 0;
 
-        .icono {
-          font-size: 60px;
-          margin-bottom: 30px;
-          color: $emphasis-color;
+        .item {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: auto;
+          cursor: pointer;
+          opacity: 0.5;
+          transition: 0.5s;
+
+          .icono {
+            font-size: 60px;
+            margin-bottom: 30px;
+            color: $text-color-dark;
+            transition: 0.5s;
+          }
+          .texto {
+            transition: 0.5s;
+          }
+        }
+        .item:hover {
+          opacity: 1;
+
+          .icono,
+          .texto {
+            color: $emphasis-color;
+          }
         }
       }
-      .item:hover {
-        opacity: 1;
-        transition: opacity 0.5s;
+
+      .boton {
+        margin-top: 20px;
+        padding: 4px 8px;
+        background-color: transparent;
+        border: 3px solid $emphasis-color;
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+          box-shadow: inset 0 0 0 10px $emphasis-color;
+          background-color: $emphasis-color;
+          color: $text-color-light;
+        }
       }
     }
 
@@ -71,6 +105,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      width: 100%;
       color: $text-color-light;
       background-color: $components-dark;
       padding-top: 60px;
@@ -147,14 +182,19 @@
       margin-bottom: 70px;
 
       .boton {
-        background: $emphasis-color;
-        border: none;
-        color: $text-color-light;
         margin-top: 50px;
-        padding: 10px 25px;
-      }
-      .boton:hover {
-        background-color: $emphasis-color-hover;
+        padding: 4px 8px;
+        background-color: transparent;
+        border: 3px solid $emphasis-color;
+        cursor: pointer;
+        transition: 0.5s;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: inset 0 0 0 10px $emphasis-color;
+          background-color: $emphasis-color;
+          color: $text-color-light;
+        }
       }
     }
   }

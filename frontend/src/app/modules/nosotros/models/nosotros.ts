@@ -1,3 +1,9 @@
+import { Cursos } from './cursos';
+import { Estudios } from './estudios';
+import { Idiomas } from './idiomas';
+import { Tecnologias } from './tecnologias';
+import { Trabajos } from './trabajos';
+
 export class Nosotros {
   foto: string;
   nombre: string;
@@ -8,11 +14,11 @@ export class Nosotros {
   linkedin: string;
   github: string;
   expliacionPersonal: string;
-  trabajos: string[];
-  estudios: string[];
-  cursos: string[];
-  tecnologias: string[];
-  idiomas: string[];
+  trabajos: Trabajos[];
+  estudios: Estudios[];
+  cursos: Cursos[];
+  tecnologias: Tecnologias[];
+  idiomas: Idiomas[];
   habilidades: string;
 
   constructor(
