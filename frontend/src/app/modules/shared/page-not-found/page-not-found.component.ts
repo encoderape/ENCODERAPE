@@ -19,10 +19,17 @@ export class PageNotFoundComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.redirect();
+  }
+
+  redirect(): void {
+    console.log('hola');
     setInterval(() => {
       this.redirectCount--;
       if (this.redirectCount <= 0) {
-        this.router.navigate(['']);
+        this.router.navigate(['']).then(() => {
+          window.location.reload();
+        });
       }
     }, 1000);
   }
