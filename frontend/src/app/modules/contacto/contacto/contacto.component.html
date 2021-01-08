@@ -172,6 +172,59 @@
             ></textarea>
           </label>
         </div>
+        <div class="prioridad">
+          <div>
+            <p>Urgencia?</p>
+            <label
+              class="prioridad-etiqueta"
+              for="ninguna"
+              [ngClass]="{ active: ninguna.value !== '' }"
+            >
+              <i class="fas fa-battery-empty radiobutton-icon"></i>
+              <input
+                class="radiobutton"
+                id="ninguna"
+                type="radio"
+                name="ninguna"
+                #ninguna="ngModel"
+                [(ngModel)]="contacto.prioridad[0]"
+              />
+              Ninguna
+            </label>
+            <label
+              class="prioridad-etiqueta"
+              for="baja"
+              [ngClass]="{ active: baja.value !== '' }"
+            >
+              <i class="fas fa-battery-half radiobutton-icon"></i>
+              <input
+                class="radiobutton"
+                id="baja"
+                type="radio"
+                name="baja"
+                #baja="ngModel"
+                [(ngModel)]="contacto.prioridad[1]"
+              />
+              Baja
+            </label>
+            <label
+              class="prioridad-etiqueta"
+              for="alta"
+              [ngClass]="{ active: alta.value !== '' }"
+            >
+              <i class="fas fa-battery-full radiobutton-icon"></i>
+              <input
+                class="radiobutton"
+                id="alta"
+                type="radio"
+                name="alta"
+                #alta="ngModel"
+                [(ngModel)]="contacto.prioridad[2]"
+              />
+              Alta
+            </label>
+          </div>
+        </div>
         <div class="terminos">
           <label class="terminos-etiqueta" for="terminos">
             <div>

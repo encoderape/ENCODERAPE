@@ -4,23 +4,34 @@ const CONTACTO = new MONGOOSE.Schema(
     {
         nombre: {
             type: String,
+            required: true
         },
         telefono: {
             type: Number,
             maxlength: 9,
+            required: true
         },
         correo: {
             type: String,
+            required: true
         },
         tipo: {
             type: [String],
+            required: true
         },
         descripcion: {
             type: String,
+            required: true
+        },
+        prioridad: {
+            type: [String],
+            enum: ['', 'Ninguna', 'Baja', 'Alta'],
+            required: true
         },
         terminos: {
             type: Boolean,
-            default: false
+            default: false,
+            required: true
         }
     },
     {timestamps: true}

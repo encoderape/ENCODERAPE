@@ -22,13 +22,30 @@ export class ContactoComponent implements OnInit {
       nombre: null,
       telefono: null,
       correo: null,
-      tipo: [''],
+      tipo: ['', '', '', '', ''],
       descripcion: null,
+      prioridad: ['', '', ''],
       terminos: false,
     };
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    document.getElementById('ninguna').addEventListener('click', () => {
+      this.contacto.prioridad[0] = 'Ninguna';
+      this.contacto.prioridad[1] = '';
+      this.contacto.prioridad[2] = '';
+    });
+    document.getElementById('baja').addEventListener('click', () => {
+      this.contacto.prioridad[0] = '';
+      this.contacto.prioridad[1] = 'Baja';
+      this.contacto.prioridad[2] = '';
+    });
+    document.getElementById('alta').addEventListener('click', () => {
+      this.contacto.prioridad[0] = '';
+      this.contacto.prioridad[1] = '';
+      this.contacto.prioridad[2] = 'Alta';
+    });
+  }
 
   doSubmit(): void {
     if (this.contacto.tipo[0]) {
@@ -46,6 +63,7 @@ export class ContactoComponent implements OnInit {
     if (this.contacto.tipo[4]) {
       this.contacto.tipo[4] = 'Consultoria';
     }
+    console.log(this.contacto);
     this.contactoService.create(this.contacto).subscribe({
       next: (data) => {
         this.toastService.callSuccessfulToast('Formulario enviado con éxito');
@@ -54,6 +72,7 @@ export class ContactoComponent implements OnInit {
         }, 1000);
       },
       error: (err) => {
+        console.error(err);
         this.toastService.callErrorToast(
           'Error interno del servidor, inténtelo de nuevo por favor, si el problema persiste, ponte en contacto con asistencia al cliente'
         );
