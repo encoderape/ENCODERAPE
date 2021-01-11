@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ThrowStmt } from '@angular/compiler';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { Nosotros } from 'src/app/modules/nosotros/models/nosotros';
+import { Portfolio } from 'src/app/modules/nosotros/models/portfolio';
+import { NosotrosService } from 'src/app/modules/nosotros/services/nosotros.service';
 
 @Component({
   selector: 'ape-nosotros',
@@ -9,7 +10,22 @@ import { Nosotros } from 'src/app/modules/nosotros/models/nosotros';
   styleUrls: ['./nosotros.component.scss'],
 })
 export class NosotrosComponent implements OnInit {
-  constructor() {}
+  portfolio: Portfolio[];
 
-  ngOnInit(): void {}
+  constructor(
+    private nosotrosService: NosotrosService,
+  ) {}
+
+  ngOnInit(): void {
+    // this.recogerPortfolios();
+  }
+
+  /*private recogerPortfolios(){
+    this.nosotrosService.get().subscribe({
+      next: (data) => {
+      },
+    });
+  }*/
+
 }
+

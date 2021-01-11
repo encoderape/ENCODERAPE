@@ -4,7 +4,7 @@ import { Idiomas } from './idiomas';
 import { Tecnologias } from './tecnologias';
 import { Trabajos } from './trabajos';
 
-export class Nosotros {
+export class Portfolio {
   foto: string;
   nombre: string;
   apellido1: string;
