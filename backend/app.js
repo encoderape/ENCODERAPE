@@ -8,6 +8,7 @@ const CORS = require('./middlewares/cors.js');
 const CATALOGO = require('./routes/_catalogo.js');
 const CONTACTO = require('./routes/_contacto.js');
 const USUARIO = require('./routes/_usuario.js');
+const NOSOTROS = require('./routes/_nosotros.js');
 const PORTFOLIO = require('./routes/_portfolio.js');
 
 const APP = EXPRESS();
@@ -26,6 +27,7 @@ APP.use(CORS);
 APP.use('/catalogo', CATALOGO);
 APP.use('/contacto', CONTACTO);
 APP.use('/usuario', USUARIO);
+APP.use('/nosotros', NOSOTROS);
 APP.use('/portfolio', PORTFOLIO);
 
 // LISTENER

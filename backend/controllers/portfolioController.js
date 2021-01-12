@@ -1,4 +1,4 @@
-const PORTFOLIO = require('../models/portfolioDTO');
+const PORTFOLIO = require('../models/portfolioDTO.js');
 
 const CONTROLADOR = {
     async create(req, res) {
