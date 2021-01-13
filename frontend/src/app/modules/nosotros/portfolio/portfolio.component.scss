@@ -19,14 +19,20 @@
       &-datos {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         width: 40%;
-        text-align: center;
+        padding-left: 150px;
+
+        .icono {
+          margin-right: 10px;
+          color: #838383;
+        }
       }
       &-explicacion {
         display: flex;
         flex-direction: column;
         width: 60%;
-        text-align: center;
+        padding-right: 150px;
       }
     }
 
@@ -36,6 +42,7 @@
       align-items: center;
       width: 100%;
       margin: 50px 0 50px 0;
+      padding: 0 150px 0 150px;
 
       &-contenedor {
         display: flex;
@@ -108,9 +115,18 @@
         .titulo {
           text-align: center;
         }
-        .estudio {
-          padding-right: 50px;
+        .estudio,
+        .trabajo {
+          margin-bottom: 30px;
         }
+      }
+
+      &-estudios {
+        padding-left: 150px;
+      }
+
+      &-trabajos {
+        padding-right: 150px;
       }
     }
   }
@@ -119,4 +135,11 @@
 h3,
 p {
   color: $text-color-light;
+}
+.icono-titulo {
+  color: $emphasis-color;
+  font-size: 25px;
+}
+.titulo {
+  margin-bottom: 10px;
 }
