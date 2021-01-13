@@ -9,10 +9,13 @@ import { Portfolio } from 'src/app/modules/nosotros/models/portfolio/portfolio';
 @Injectable({
   providedIn: 'root',
 })
-export class PortfolioService extends CrudService<Portfolio>{
+export class PortfolioService extends CrudService<Portfolio> {
   constructor(http: HttpClient) {
     super(http);
-    this.withCasting(x => new Portfolio(x)).withUrlPrefix(PREFIX.portfolio);
+    this.withCasting((x) => new Portfolio(x)).withUrlPrefix(PREFIX.portfolio);
   }
 
+  read(): Observable<Portfolio[]> {
+    return this.get();
+  }
 }

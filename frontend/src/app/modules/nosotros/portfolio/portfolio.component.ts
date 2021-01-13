@@ -10,5 +10,11 @@ import { PortfolioService } from 'src/app/modules/nosotros/services/portfolio.se
 export class PortfolioComponent implements OnInit {
   constructor(private portfolioService: PortfolioService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.leerPortfolios();
+  }
+
+  private leerPortfolios(): void {
+    console.log(this.portfolioService.read().subscribe());
+  }
 }
