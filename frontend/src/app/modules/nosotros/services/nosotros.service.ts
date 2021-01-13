@@ -9,6 +9,6 @@ import { PREFIX } from 'src/app/modules/shared/config/webApiPrefix.config';
 })
 export class NosotrosService {
   constructor(private crud: CrudService) {
-    this.crud.withUrlPrefix(PREFIX.portfolio);
+    this.crud.withUrlPrefix(PREFIX.nosotros);
   }
 }

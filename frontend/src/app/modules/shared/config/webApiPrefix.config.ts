@@ -5,6 +5,7 @@ const webApiPrefixes: IWebApiPrefix = {
   catalogo: 'catalogo',
   contacto: 'contacto',
   usuario: 'usuario',
+  nosotros: 'nosotros',
   portfolio: 'portfolio',
 };
 
