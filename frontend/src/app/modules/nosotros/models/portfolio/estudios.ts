@@ -1,15 +1,13 @@
-export class Estudios {
+import { BaseDto } from 'src/app/modules/shared/controls/base-dto';
+
+export class Estudios extends BaseDto {
   fechaFin: Date;
   nombre: string;
   institucion: string;
   aprendizaje: string;
   ciudad: string;
 
-  constructor(fechaFIn, nombre, institucion, aprendizaje, ciudad) {
-    this.fechaFin = fechaFIn;
-    this.nombre = nombre;
-    this.institucion = institucion;
-    this.aprendizaje = aprendizaje;
-    this.ciudad = ciudad;
+  constructor(src?: any) {
+    super(src);
   }
 }

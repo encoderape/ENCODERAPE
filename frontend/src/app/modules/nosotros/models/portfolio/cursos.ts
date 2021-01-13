@@ -1,11 +1,11 @@
-export class Cursos {
+import { BaseDto } from 'src/app/modules/shared/controls/base-dto';
+
+export class Cursos extends BaseDto {
   fechaFin: Date;
   nombre: string;
   aprendizaje: string;
 
-  constructor(fechaFin, nombre, aprendizaje) {
-    this.fechaFin = fechaFin;
-    this.nombre = nombre;
-    this.aprendizaje = aprendizaje;
+  constructor(src?: any) {
+    super(src);
   }
 }

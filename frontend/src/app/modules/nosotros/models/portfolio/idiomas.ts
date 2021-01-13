@@ -1,9 +1,10 @@
-export class Idiomas {
+import { BaseDto } from 'src/app/modules/shared/controls/base-dto';
+
+export class Idiomas extends BaseDto {
   idioma: string;
   nivel: string;
 
-  constructor(idioma, nivel) {
-    this.idioma = idioma;
-    this.nivel = nivel;
+  constructor(src?: any) {
+    super(src);
   }
 }

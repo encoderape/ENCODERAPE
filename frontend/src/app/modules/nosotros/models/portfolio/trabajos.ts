@@ -1,15 +1,13 @@
-export class Trabajos {
+import { BaseDto } from 'src/app/modules/shared/controls/base-dto';
+
+export class Trabajos extends BaseDto {
   fechaInicio: Date;
   fechaFin: Date;
   empresa: string;
   rango: string;
   tareasRealizadas: string;
 
-  constructor(fechaInicio, fechaFin, empresa, rango, tareasRealizadas) {
-    this.fechaInicio = fechaInicio;
-    this.fechaFin = fechaFin;
-    this.empresa = empresa;
-    this.rango = rango;
-    this.tareasRealizadas = tareasRealizadas;
+  constructor(src?: any) {
+    super(src);
   }
 }

@@ -1,11 +1,11 @@
-export class Tecnologias {
+import { BaseDto } from 'src/app/modules/shared/controls/base-dto';
+
+export class Tecnologias extends BaseDto {
   imagen: string;
   nombre: string;
   progreso: number;
 
-  constructor(imagen, nombre, progreso) {
-    this.imagen = imagen;
-    this.nombre = nombre;
-    this.progreso = progreso;
+  constructor(src?: any) {
+    super(src);
   }
 }
