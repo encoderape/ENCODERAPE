@@ -8,7 +8,10 @@ import { PREFIX } from 'src/app/modules/shared/config/webApiPrefix.config';
   providedIn: 'root',
 })
 export class NosotrosService {
-  constructor(private crud: CrudService) {
-    this.crud.withUrlPrefix(PREFIX.nosotros);
-  }
+  // constructor(private crud: CrudService) {
+  //  this.crud.withUrlPrefix(PREFIX.portfolio);
+  // }
+  // get(): Observable<object> {
+  //  return this.crud.get();
+  // }
 }

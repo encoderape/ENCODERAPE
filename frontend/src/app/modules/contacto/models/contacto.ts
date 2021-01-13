@@ -1,4 +1,6 @@
-export class Contacto {
+import { BaseDto } from 'src/app/modules/shared/controls/base-dto';
+
+export class Contacto extends BaseDto {
   nombre: string;
   telefono: number;
   correo: string;
@@ -7,21 +9,7 @@ export class Contacto {
   prioridad: string[];
   terminos: boolean;
 
-  constructor(
-    nombre,
-    telefono,
-    correo,
-    tipo,
-    descripcion,
-    prioridad,
-    terminos
-  ) {
-    this.nombre = nombre;
-    this.telefono = telefono;
-    this.correo = correo;
-    this.tipo = tipo;
-    this.descripcion = descripcion;
-    this.prioridad = prioridad;
-    this.terminos = terminos;
+  constructor(src?: any) {
+    super(src);
   }
 }
