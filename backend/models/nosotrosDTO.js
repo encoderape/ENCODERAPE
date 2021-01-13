@@ -1,5 +1,4 @@
 const MONGOOSE = require('mongoose');
-const { stringify } = require('querystring');
 
 const NOSOTROS = MONGOOSE.Schema(
     {
@@ -20,10 +19,10 @@ const NOSOTROS = MONGOOSE.Schema(
             }
         ],
         
-        tituloNosotros: {
+        tituloCaracteristicas: {
             type: String,
         },
-        nosotros: [
+        caracteristicas: [
             {
                 icono: {
                     type: String,
