@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRouting } from 'src/app/app.routing';
 import { AppComponent } from 'src/app/app.component';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
+import { ContactoModule } from './modules/contacto/contacto.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { SharedModule } from 'src/app/modules/shared/shared.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ContactoModule,
     SharedModule,
   ],
   providers: [],
