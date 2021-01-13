@@ -7,8 +7,12 @@ import { PREFIX } from 'src/app/modules/shared/config/webApiPrefix.config';
 @Injectable({
   providedIn: 'root',
 })
-export class NosotrosService {
+export class PortfolioService {
   constructor(private crud: CrudService) {
     this.crud.withUrlPrefix(PREFIX.portfolio);
+  }
+
+  get(): Observable<object> {
+    return this.crud.get();
   }
 }
