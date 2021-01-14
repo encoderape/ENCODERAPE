@@ -12,7 +12,7 @@ import { Portfolio } from 'src/app/modules/nosotros/models/portfolio/portfolio';
 export class PortfolioService extends CrudService<Portfolio> {
   constructor(http: HttpClient) {
     super(http);
-    this.withCasting((x) => new Portfolio(x)).withUrlPrefix(PREFIX.portfolio);
+    this.withUrlPrefix(PREFIX.portfolio);
   }
 
   read(): Observable<Portfolio[]> {
