@@ -8,5 +8,5 @@ MONGOOSE.connect("mongodb+srv://ape:Encoderape97)@crustaceo.xjtpy.mongodb.net/en
         useFindAndModify: true
     }
 )
-    .then(() => console.log("CONEXIÓN A LA BASE DE DATOS REALIZADA CORRECTAMENTE"))
+    .then(() => console.log("PASO 3 -> CONEXIÓN A LA BASE DE DATOS REALIZADA CORRECTAMENTE"))
     .catch(console.error);
