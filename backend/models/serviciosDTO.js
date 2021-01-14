@@ -4,17 +4,11 @@ const SERVICIOS = new MONGOOSE.Schema(
     {
         steps: [
             {
-                imagen: {
-                    type: String,
-                },
                 titulo: {
                     type: String,
                 },
                 caracteristicas: [
                     {
-                        imagen: {
-                            type: String,
-                        },
                         titulo: {
                             type: String,
                         },
@@ -25,23 +19,15 @@ const SERVICIOS = new MONGOOSE.Schema(
                 ]
             }
         ],
-
         tecnologias: [
             {
-                imagen: {
-                    type: String,
-                },
                 nombre: {
                     type: String,
                 }
             }
         ],
-
         nuestrosServicios: [
             {
-                imagen: {
-                    type: String,
-                },
                 titulo: {
                     type: String,
                 },

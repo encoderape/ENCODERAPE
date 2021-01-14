@@ -1,47 +1,40 @@
 const MONGOOSE = require('mongoose');
 
-const NOSOTROS = MONGOOSE.Schema(
+const NOSOTROS = new MONGOOSE.Schema(
     {
-        tituloHabilidades:{
-            type: String,
-        },
         habilidades: [
             {
-                icono: {
-                    type: String,
-                },
                 titulo: {
                     type: String,
+                    required: true,
                 },
                 texto: {
                     type: String,
+                    required: true,
                 }
             }
         ],
-        
-        tituloCaracteristicas: {
-            type: String,
-        },
         caracteristicas: [
             {
-                icono: {
-                    type: String,
-                },
                 titulo: {
                     type: String,
+                    required: true,
                 },
                 texto: {
                     type: String,
+                    required: true,
                 }
             }
         ],
         trabajadores: [
             {
                 imagen: {
-                    type: String
+                    type: String,
+                    required: true,
                 },
                 nombreCompleto: {
                     type: String,
+                    required: true,
                 }
             }
         ]

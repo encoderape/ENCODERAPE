@@ -17,6 +17,7 @@ const CONTACTO = new MONGOOSE.Schema(
         },
         tipo: {
             type: [String],
+            enum: ['', 'Aplicación Web', 'Aplicación Móvil', 'UX/UI Design', 'Análisis de Proyectos', 'Consultoría'],
             required: true
         },
         descripcion: {

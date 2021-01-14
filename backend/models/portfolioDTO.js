@@ -2,50 +2,47 @@ const MONGOOSE = require('mongoose');
 
 const PORTFOLIO = new MONGOOSE.Schema(
     {
-        foto: {
-            type: String,
-        },
-        nombre: {
-            type: String,
-        },
-        apellido1: {
-            type: String,
-        },
-        apellido2: {
-            type: String,
-        },
         telefono: {
             type: Number,
             maxlength: 9,
+            required: true,
         },
         correo: {
             type: String,
+            required: true,
         },
         linkedin: {
             type: String,
+            required: true,
         },
         github: {
             type: String,
+            required: true,
         },
-        expliacionPersonal: {
+        presentacion: {
             type: String,
+            required: true,
         },
         trabajos: [
             {
                 fechaInicio: {
                     type: Date,
+                    required: true,
                 },
                 fechaFin: {
                     type: Date,
                 },
                 empresa: {
                     type: String,
+                    required: true,
                 },
                 rango: {
                     type: String,
+                    required: true,
                 },
-                tareasRealizadas: {
+                tareas: {
                     type: String,
+                    required: true,
                 },
             },
         ],
@@ -56,15 +53,19 @@ const PORTFOLIO = new MONGOOSE.Schema(
                 },
                 nombre: {
                     type: String,
+                    required: true,
                 },
                 institucion: {
                     type: String,
+                    required: true,
                 },
                 aprendizaje: {
                     type: String,
+                    required: true,
                 },
                 ciudad: {
                     type: String,
+                    required: true,
                 },
             },
         ],
@@ -75,22 +76,25 @@ const PORTFOLIO = new MONGOOSE.Schema(
                 },
                 nombre: {
                     type: String,
+                    required: true,
                 },
                 aprendizaje: {
                     type: String,
+                    required: true,
                 },
             },
         ],
         tecnologias: [
             {
-                imagen: {
-                    type: String,
-                },
                 nombre: {
                     type: String,
+                    required: true,
                 },
                 progreso: {
                     type: Number,
+                    min: 0,
+                    max: 100,
+                    required: true,
                 },
             },
         ],
@@ -98,14 +102,17 @@ const PORTFOLIO = new MONGOOSE.Schema(
             {
                 idioma: {
                     type: String,
+                    required: true,
                 },
                 nivel: {
                     type: String,
+                    required: true,
                 },
             },
         ],
         habilidades: {
             type: String,
+            required: true,
         },
         
     },
