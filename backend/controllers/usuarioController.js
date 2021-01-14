@@ -9,7 +9,7 @@ const CONTROLADOR = {
                 usuario,
             });
         } catch (e) {
-            res.status(400).send({
+            res.status(500).send({
                 message: "Error al añadir el usuario.",
                 e,
             });
@@ -37,7 +37,7 @@ const CONTROLADOR = {
                 usuario,
             });
         } catch (e) {
-            res.status(500).send({
+            res.status(404).send({
                 message: "Error al recoger el usuario.",
                 e,
             });
@@ -46,12 +46,12 @@ const CONTROLADOR = {
     async update(req, res) {
         try {
             let usuario = await USUARIO.findByIdAndUpdate(req.body._id, req.body);
-            res.status(200).send({
+            res.status(201).send({
                 message: "Usuario actualizado correctamente.",
                 usuario,
             });
         } catch (e) {
-            res.status(400).send({
+            res.status(500).send({
                 message: "Error al actualizar el usuario.",
                 e,
             });
@@ -60,7 +60,7 @@ const CONTROLADOR = {
     async delete(req, res) {
         try {
             let usuario = await USUARIO.findByIdAndDelete(req.body._id);
-            res.status(200).send({
+            res.status(201).send({
                 message: "Usuario eliminado correctamente.",
                 usuario,
             });
