@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
 import { Contacto } from 'src/app/modules/contacto/models/contacto';
 import { ContactoService } from 'src/app/modules/contacto/services/contacto.service';
+import { CheckboxType } from 'src/app/modules/contacto/enums/checkbox-type';
+import { RadiobuttonType } from 'src/app/modules/contacto/enums/radiobutton-type';
 
 @Component({
   selector: 'ape-contacto',
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.scss'],
+  providers: [ContactoService],
 })
-export class ContactoComponent implements OnInit {
+export class ContactoComponent {
   contacto: Contacto;
 
   constructor(private contactoService: ContactoService) {
@@ -23,41 +25,46 @@ export class ContactoComponent implements OnInit {
     };
   }
 
-  ngOnInit(): void {
-    document.getElementById('ninguna').addEventListener('click', () => {
-      this.contacto.prioridad[0] = 'Ninguna';
-      this.contacto.prioridad[1] = '';
-      this.contacto.prioridad[2] = '';
-    });
-    document.getElementById('baja').addEventListener('click', () => {
-      this.contacto.prioridad[0] = '';
-      this.contacto.prioridad[1] = 'Baja';
-      this.contacto.prioridad[2] = '';
-    });
-    document.getElementById('alta').addEventListener('click', () => {
-      this.contacto.prioridad[0] = '';
-      this.contacto.prioridad[1] = '';
-      this.contacto.prioridad[2] = 'Alta';
-    });
+  doSubmit(): void {
+    console.log(this.contacto);
+    this.changeCheckboxValue();
+    this.changeRadiobuttonValue();
+    this.contactoService.insert(this.contacto);
   }
 
-  doSubmit(): void {
+  private changeCheckboxValue(): void {
     if (this.contacto.tipo[0]) {
-      this.contacto.tipo[0] = 'Apliación Web';
+      this.contacto.tipo[0] = CheckboxType.Web;
     }
     if (this.contacto.tipo[1]) {
-      this.contacto.tipo[1] = 'Apliación Móvil';
+      this.contacto.tipo[1] = CheckboxType.Movil;
     }
     if (this.contacto.tipo[2]) {
-      this.contacto.tipo[2] = 'UX/UI';
+      this.contacto.tipo[2] = CheckboxType.Design;
     }
     if (this.contacto.tipo[3]) {
-      this.contacto.tipo[3] = 'Análisis de Proyectos';
+      this.contacto.tipo[3] = CheckboxType.Analysis;
     }
     if (this.contacto.tipo[4]) {
-      this.contacto.tipo[4] = 'Consultoria';
+      this.contacto.tipo[4] = CheckboxType.Consulting;
     }
-    console.log(this.contacto);
-    this.contactoService.insert(this.contacto).subscribe();
+  }
+
+  private changeRadiobuttonValue(): void {
+    if (this.contacto.prioridad[0] === undefined) {
+      this.contacto.prioridad[0] = RadiobuttonType.Ninguna;
+      this.contacto.prioridad[1] = RadiobuttonType.Vacio;
+      this.contacto.prioridad[2] = RadiobuttonType.Vacio;
+    }
+    if (this.contacto.prioridad[1] === undefined) {
+      this.contacto.prioridad[0] = RadiobuttonType.Vacio;
+      this.contacto.prioridad[1] = RadiobuttonType.Baja;
+      this.contacto.prioridad[2] = RadiobuttonType.Vacio;
+    }
+    if (this.contacto.prioridad[2] === undefined) {
+      this.contacto.prioridad[0] = RadiobuttonType.Vacio;
+      this.contacto.prioridad[1] = RadiobuttonType.Vacio;
+      this.contacto.prioridad[2] = RadiobuttonType.Alta;
+    }
   }
 }
