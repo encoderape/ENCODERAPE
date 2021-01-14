@@ -4,4 +4,5 @@ export interface IWebApiPrefix {
   usuario: string;
   nosotros: string;
   portfolio: string;
+  servicios: string;
 }
