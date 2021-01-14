@@ -7,6 +7,7 @@ const webApiPrefixes: IWebApiPrefix = {
   usuario: 'usuario',
   nosotros: 'nosotros',
   portfolio: 'portfolio',
+  servicios: 'servicios',
 };
 
 const webApiBaseURL: string = environment.API_URL;

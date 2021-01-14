@@ -10,6 +10,7 @@ const CONTACTO = require('./routes/_contacto.js');
 const USUARIO = require('./routes/_usuario.js');
 const NOSOTROS = require('./routes/_nosotros.js');
 const PORTFOLIO = require('./routes/_portfolio.js');
+const SERVICIOS = require('./routes/_servicios.js');
 
 const APP = EXPRESS();
 const PORT = process.env.PORT || 3000;
@@ -29,6 +30,7 @@ APP.use('/contacto', CONTACTO);
 APP.use('/usuario', USUARIO);
 APP.use('/nosotros', NOSOTROS);
 APP.use('/portfolio', PORTFOLIO);
+APP.use('/servicios', SERVICIOS);
 
 // LISTENER
 APP.listen(PORT, () => {

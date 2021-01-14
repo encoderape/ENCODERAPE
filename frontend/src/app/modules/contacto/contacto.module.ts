@@ -8,7 +8,6 @@ import { ContactoComponent } from 'src/app/modules/contacto/contacto/contacto.co
 import { SharedModule } from 'src/app/modules/shared/shared.module';
 import { ContactoErrorInterceptor } from './interceptors/contacto-error.interceptor';
 import { ContactoService } from './services/contacto.service';
-import { ContactoSuccessInterceptor } from './interceptors/contacto-success.interceptor';
 
 @NgModule({
   declarations: [ContactoComponent],
@@ -18,11 +17,6 @@ import { ContactoSuccessInterceptor } from './interceptors/contacto-success.inte
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ContactoErrorInterceptor,
-      multi: true,
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ContactoSuccessInterceptor,
       multi: true,
     },
   ],

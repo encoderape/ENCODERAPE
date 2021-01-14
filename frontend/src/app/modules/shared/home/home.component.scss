@@ -32,6 +32,7 @@
           border: none;
           margin-top: 50px;
           padding: 10px 25px;
+          cursor: pointer;
         }
         &-boton:hover {
           background-color: $emphasis-color-hover;
@@ -188,7 +189,6 @@
         border: 3px solid $emphasis-color;
         cursor: pointer;
         transition: 0.5s;
-        cursor: pointer;
 
         &:hover {
           box-shadow: inset 0 0 0 10px $emphasis-color;
