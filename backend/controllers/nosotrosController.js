@@ -5,12 +5,12 @@ const CONTROLADOR = {
         try {
             let nosotros = await NOSOTROS.create(req.body);
             res.status(201).send({
-                message: "Textos de nosotros añadidos correctamente.",
+                message: "Nosotros añadido correctamente.",
                 nosotros,
             });
         } catch (e) {
-            res.status(400).send({
-                message: "Error al añadir los textos de nosotros.",
+            res.status(500).send({
+                message: "Error al añadir nosotros.",
                 e,
             });
         }
@@ -18,13 +18,13 @@ const CONTROLADOR = {
     async readAll(req, res) {
         try {
             let nosotros = await NOSOTROS.find({ });
-            res.status(201).send({
-                message: "Textos de nosotros recogidos correctamente.",
+            res.status(200).send({
+                message: "Nosotros recogidos correctamente.",
                 nosotros,
             });
         } catch (e) {
-            res.status(400).send({
-                message: "Error al recoger los textos de nosotros.",
+            res.status(500).send({
+                message: "Error al recoger nosotros.",
                 e,
             });
         }
@@ -33,12 +33,12 @@ const CONTROLADOR = {
         try {
             let nosotros = await NOSOTROS.findById({_id: req.params._id});
             res.status(200).send({
-                message: "Textos de nosotros recogidos correctamente.",
+                message: "Nosotros recogido correctamente.",
                 nosotros,
             });
         } catch (e) {
-            res.status(500).send({
-                message: "Error al recoger los textos de nosotros.",
+            res.status(404).send({
+                message: "Error al recoger nosotros.",
                 e,
             });
         }
@@ -46,13 +46,13 @@ const CONTROLADOR = {
     async update(req, res){
         try{
             let nosotros = await NOSOTROS.findByIdAndUpdate(req.body._id, req.body);
-            res.status(200).send({
-                message: "Textos de nosotros actualizados correctamente.",
+            res.status(201).send({
+                message: "Nosotros actualizado correctamente.",
                 nosotros,
             });
         }catch(e){
-            res.status(400).send({
-                message: "Error al actualizar los textos de nosotros.",
+            res.status(500).send({
+                message: "Error al actualizar nosotros.",
                 e
             });
         }
@@ -60,13 +60,13 @@ const CONTROLADOR = {
     async delete(req, res) {
         try {
             let nosotros = await NOSOTROS.findByIdAndDelete(req.body._id);
-            res.status(200).send({
-                message: "Textos de nosotros eliminados correctamente.",
+            res.status(201).send({
+                message: "Nosotros eliminado correctamente.",
                 nosotros,
             });
         } catch (e) {
             res.status(500).send({
-                message: "Error al eliminar los textos de nosotros.",
+                message: "Error al eliminar nosotros.",
                 e,
             });
         }

@@ -9,7 +9,7 @@ const CONTROLADOR = {
                 portfolio,
             });
         } catch (e) {
-            res.status(400).send({
+            res.status(500).send({
                 message: "Error al añadir el portfolio.",
                 e,
             });
@@ -18,12 +18,12 @@ const CONTROLADOR = {
     async readAll(req, res) {
         try {
             let portfolio = await PORTFOLIO.find({ });
-            res.status(201).send({
+            res.status(200).send({
                 message: "Portfolios recogidos correctamente.",
                 portfolio,
             });
         } catch (e) {
-            res.status(400).send({
+            res.status(500).send({
                 message: "Error al recoger los portfolios.",
                 e,
             });
@@ -37,7 +37,7 @@ const CONTROLADOR = {
                 portfolio,
             });
         } catch (e) {
-            res.status(500).send({
+            res.status(404).send({
                 message: "Error al recoger el portfolio.",
                 e,
             });
@@ -46,12 +46,12 @@ const CONTROLADOR = {
     async update(req, res){
         try{
             let portfolio = await PORTFOLIO.findByIdAndUpdate(req.body._id, req.body);
-            res.status(200).send({
+            res.status(201).send({
                 message: "Portfolio actualizado correctamente.",
                 portfolio,
             });
         }catch(e){
-            res.status(400).send({
+            res.status(500).send({
                 message: "Error al actualizar el portfolio.",
                 e
             });
@@ -60,7 +60,7 @@ const CONTROLADOR = {
     async delete(req, res) {
         try {
             let portfolio = await PORTFOLIO.findByIdAndDelete(req.body._id);
-            res.status(200).send({
+            res.status(201).send({
                 message: "Portfolio eliminado correctamente.",
                 portfolio,
             });

@@ -5,12 +5,12 @@ const CONTROLADOR = {
         try {
             let servicios = await SERVICIOS.create(req.body);
             res.status(201).send({
-                message: "Servicios añadidos correctamente.",
+                message: "Servicio añadido correctamente.",
                 servicios,
             });
         } catch (e) {
-            res.status(400).send({
-                message: "Error al añadir los servicios.",
+            res.status(500).send({
+                message: "Error al añadir el servicio.",
                 e,
             });
         }
@@ -18,12 +18,12 @@ const CONTROLADOR = {
     async readAll(req, res) {
         try {
             let servicios = await SERVICIOS.find({ });
-            res.status(201).send({
+            res.status(200).send({
                 message: "Servicios recogidos correctamente.",
                 servicios,
             });
         } catch (e) {
-            res.status(400).send({
+            res.status(500).send({
                 message: "Error al recoger los servicios.",
                 e,
             });
@@ -37,7 +37,7 @@ const CONTROLADOR = {
                 servicios,
             });
         } catch (e) {
-            res.status(500).send({
+            res.status(404).send({
                 message: "Error al recoger el servicio.",
                 e,
             });
@@ -46,12 +46,12 @@ const CONTROLADOR = {
     async update(req, res){
         try{
             let servicios = await SERVICIOS.findByIdAndUpdate(req.body._id, req.body);
-            res.status(200).send({
+            res.status(201).send({
                 message: "Servicios actualizados correctamente.",
                 servicios,
             });
         }catch(e){
-            res.status(400).send({
+            res.status(500).send({
                 message: "Error al actualizar los servicios.",
                 e
             });
@@ -60,9 +60,9 @@ const CONTROLADOR = {
     async delete(req, res) {
         try {
             let servicios = await SERVICIOS.findByIdAndDelete(req.body._id);
-            res.status(200).send({
+            res.status(201).send({
                 message: "Servicios eliminados correctamente.",
-                sevicios,
+                servicios,
             });
         } catch (e) {
             res.status(500).send({
