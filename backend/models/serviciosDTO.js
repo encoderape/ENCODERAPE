@@ -37,7 +37,7 @@ const SERVICIOS = new MONGOOSE.Schema(
             }
         ],
 
-        servicios: [
+        nuestrosServicios: [
             {
                 imagen: {
                     type: String,
