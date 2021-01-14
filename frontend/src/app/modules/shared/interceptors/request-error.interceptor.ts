@@ -8,12 +8,11 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
 import { ResponseType } from 'src/app/modules/shared/enums/response-type';
 import { ToastService } from 'src/app/modules/shared/services/toast.service';
 
 @Injectable()
-export class ContactoErrorInterceptor implements HttpInterceptor {
+export class RequestErrorInterceptor implements HttpInterceptor {
   constructor(private toastService: ToastService) {}
 
   intercept(
@@ -23,9 +22,20 @@ export class ContactoErrorInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((err: HttpErrorResponse) => {
         if (err.status === ResponseType.BAD_REQUEST) {
-          console.log('error');
           this.toastService.callErrorToast(
-            'Error interno del servidor, inténtelo de nuevo por favor, si el problema persiste, ponte en contacto con asistencia al cliente'
+            'Petición equivocada, ponte en contacto con nosotros si el problema persiste'
+          );
+          return throwError(err);
+        }
+        if (err.status === ResponseType.NOT_FOUND) {
+          this.toastService.callErrorToast(
+            'No se ha podido encontrar lo que buscas, ponte en contacto con nosotros si el problema persiste'
+          );
+          return throwError(err);
+        }
+        if (err.status === ResponseType.SERVER_ERROR) {
+          this.toastService.callErrorToast(
+            'Error interno del servidor, ponte en contacto con nosotros si el problema persiste'
           );
           return throwError(err);
         }

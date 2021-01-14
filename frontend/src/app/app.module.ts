@@ -1,25 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRouting } from 'src/app/app.routing';
 import { AppComponent } from 'src/app/app.component';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
-import { ContactoModule } from './modules/contacto/contacto.module';
+import { RequestErrorInterceptor } from 'src/app/modules/shared/interceptors/request-error.interceptor';
+import { RequestSuccessInterceptor } from 'src/app/modules/shared/interceptors/request-success.interceptor';
+import { RequestWarningInterceptor } from 'src/app/modules/shared/interceptors/request-warning.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRouting,
-    HttpClientModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
-    ContactoModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestErrorInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestSuccessInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestWarningInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
   exports: [],
 })
