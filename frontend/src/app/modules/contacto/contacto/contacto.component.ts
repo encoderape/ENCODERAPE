@@ -26,7 +26,6 @@ export class ContactoComponent {
   }
 
   doSubmit(): void {
-    console.log(this.contacto);
     this.changeCheckboxValue();
     this.changeRadiobuttonValue();
     this.contactoService.insert(this.contacto);

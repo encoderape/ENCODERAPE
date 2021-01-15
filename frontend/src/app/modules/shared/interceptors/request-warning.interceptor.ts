@@ -36,7 +36,7 @@ export class RequestWarningInterceptor implements HttpInterceptor {
           log.code = 401;
           log.error = 'No tienes acceso a este contenido.';
           this.loggerService.insert(log);
-          this.loggerService.console(log);
+          this.loggerService.console(log, 'yellow');
           this.toastService.callWarningToast(
             'Está intentando acceder a una URL a la que solo los administradores pueden acceder.'
           );

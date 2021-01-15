@@ -35,13 +35,13 @@ export class RequestSuccessInterceptor implements HttpInterceptor {
         if (event.status === ResponseType.OK) {
           log.code = 200;
           log.error = 'Datos obtenidos correctamente.';
-          this.loggerService.console(log);
+          this.loggerService.console(log, 'green');
           return;
         }
         if (event.status === ResponseType.CREATED) {
           log.code = 201;
           log.error = 'Datos insertados correctamente.';
-          this.loggerService.console(log);
+          this.loggerService.console(log, 'green');
           this.toastService.callSuccessfulToast('Formulario enviado con éxito');
           this.router.navigate(['/']);
         }
