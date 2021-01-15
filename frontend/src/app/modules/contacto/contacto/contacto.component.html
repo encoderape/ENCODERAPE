@@ -30,6 +30,13 @@
               text
             />
             <i class="fas fa-user input-icon"></i>
+            <span
+              class="tooltip"
+              [ngClass]="{
+                active: nombre.invalid && (nombre.dirty || nombre.touched)
+              }"
+              >El campo "nombre" no acepta números. Ni puede estar vacío.</span
+            >
           </label>
           <label
             class="dato-etiqueta"
@@ -52,6 +59,13 @@
               tlf
             />
             <i class="fas fa-phone input-icon"></i>
+            <span
+              class="tooltip"
+              [ngClass]="{
+                active: telefono.invalid && (telefono.dirty || telefono.touched)
+              }"
+              >El campo "telefono" no acepta letras. Ni puede estar vacío.</span
+            >
           </label>
           <label
             class="dato-etiqueta"
@@ -73,6 +87,14 @@
               email
             />
             <i class="fas fa-envelope input-icon"></i>
+            <span
+              class="tooltip"
+              [ngClass]="{
+                active: correo.invalid && (correo.dirty || correo.touched)
+              }"
+              >El campo "correo electrónico" debe rellenarse con la siguiente
+              estructura: nombre@dominio.com. Ni puede estar vacío.</span
+            >
           </label>
         </div>
         <div class="tipo">
