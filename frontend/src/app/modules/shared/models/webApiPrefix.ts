@@ -1,8 +1,9 @@
-export interface IWebApiPrefix {
+export type IWebApiPrefix = {
   catalogo: string;
   contacto: string;
-  usuario: string;
+  log: string;
   nosotros: string;
   portfolio: string;
   servicios: string;
-}
+  usuario: string;
+};
