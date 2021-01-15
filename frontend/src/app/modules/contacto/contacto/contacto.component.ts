@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Contacto } from 'src/app/modules/contacto/models/contacto';
 import { ContactoService } from 'src/app/modules/contacto/services/contacto.service';
 import { CheckboxType } from 'src/app/modules/contacto/enums/checkbox-type';
@@ -10,7 +10,7 @@ import { RadiobuttonType } from 'src/app/modules/contacto/enums/radiobutton-type
   styleUrls: ['./contacto.component.scss'],
   providers: [ContactoService],
 })
-export class ContactoComponent {
+export class ContactoComponent implements OnInit {
   contacto: Contacto;
 
   constructor(private contactoService: ContactoService) {
@@ -25,9 +25,26 @@ export class ContactoComponent {
     };
   }
 
+  ngOnInit(): void {
+    document.getElementById('ninguna').addEventListener('click', () => {
+      this.contacto.prioridad[0] = RadiobuttonType.Ninguna;
+      this.contacto.prioridad[1] = RadiobuttonType.Vacio;
+      this.contacto.prioridad[2] = RadiobuttonType.Vacio;
+    });
+    document.getElementById('baja').addEventListener('click', () => {
+      this.contacto.prioridad[0] = RadiobuttonType.Vacio;
+      this.contacto.prioridad[1] = RadiobuttonType.Baja;
+      this.contacto.prioridad[2] = RadiobuttonType.Vacio;
+    });
+    document.getElementById('alta').addEventListener('click', () => {
+      this.contacto.prioridad[0] = RadiobuttonType.Vacio;
+      this.contacto.prioridad[1] = RadiobuttonType.Vacio;
+      this.contacto.prioridad[2] = RadiobuttonType.Alta;
+    });
+  }
+
   doSubmit(): void {
     this.changeCheckboxValue();
-    this.changeRadiobuttonValue();
     this.contactoService.insert(this.contacto);
   }
 
@@ -46,24 +63,6 @@ export class ContactoComponent {
     }
     if (this.contacto.tipo[4]) {
       this.contacto.tipo[4] = CheckboxType.Consulting;
-    }
-  }
-
-  private changeRadiobuttonValue(): void {
-    if (this.contacto.prioridad[0] === undefined) {
-      this.contacto.prioridad[0] = RadiobuttonType.Ninguna;
-      this.contacto.prioridad[1] = RadiobuttonType.Vacio;
-      this.contacto.prioridad[2] = RadiobuttonType.Vacio;
-    }
-    if (this.contacto.prioridad[1] === undefined) {
-      this.contacto.prioridad[0] = RadiobuttonType.Vacio;
-      this.contacto.prioridad[1] = RadiobuttonType.Baja;
-      this.contacto.prioridad[2] = RadiobuttonType.Vacio;
-    }
-    if (this.contacto.prioridad[2] === undefined) {
-      this.contacto.prioridad[0] = RadiobuttonType.Vacio;
-      this.contacto.prioridad[1] = RadiobuttonType.Vacio;
-      this.contacto.prioridad[2] = RadiobuttonType.Alta;
     }
   }
 }

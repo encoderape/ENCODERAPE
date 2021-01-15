@@ -1,11 +1,11 @@
 <div class="contenedor">
-  <h2 class="title">Tu idea está apunto de conocer a nuestros expertos!</h2>
+  <h2 class="title">¡Tu idea está a punto de conocer a nuestros expertos!</h2>
   <div class="contenedor-contacto">
     <form class="contacto" #contactoForm="ngForm">
       <div class="contacto-cabecera">
         <p class="subtitle">
           Por favor rellene el siguiente formulario y nuestro equipo le
-          contestará en la mayor brevedad de tiempo.
+          contestará con la mayor brevedad de tiempo.
         </p>
       </div>
       <div class="contacto-formulario">
@@ -49,6 +49,7 @@
               placeholder="666666666"
               required
               num
+              tlf
             />
             <i class="fas fa-phone input-icon"></i>
           </label>
@@ -153,7 +154,7 @@
               #consulting="ngModel"
               [(ngModel)]="contacto.tipo[4]"
             />
-            Consultoria
+            Consultoría
           </label>
         </div>
         <div class="descripcion">
@@ -174,7 +175,7 @@
         </div>
         <div class="prioridad">
           <div>
-            <p>Urgencia?*</p>
+            <p>¿Urgencia?*</p>
             <label
               class="prioridad-etiqueta"
               for="ninguna"
