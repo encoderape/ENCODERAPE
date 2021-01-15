@@ -35,7 +35,7 @@ export class RequestErrorInterceptor implements HttpInterceptor {
           log.error =
             'La URL a la que se ha intentado hacer la petición está mal.';
           this.loggerService.insert(log);
-          this.loggerService.console(log);
+          this.loggerService.console(log, 'red');
           this.toastService.callErrorToast(
             'Petición equivocada, ponte en contacto con nosotros si el problema persiste.'
           );
@@ -45,7 +45,7 @@ export class RequestErrorInterceptor implements HttpInterceptor {
           log.code = 404;
           log.error = 'Se ha intentado buscar algo que no existe.';
           this.loggerService.insert(log);
-          this.loggerService.console(log);
+          this.loggerService.console(log, 'red');
           this.toastService.callErrorToast(
             'No se ha podido encontrar lo que buscas, ponte en contacto con nosotros si el problema persiste.'
           );
@@ -55,7 +55,7 @@ export class RequestErrorInterceptor implements HttpInterceptor {
           log.code = 500;
           log.error = 'Ha habido un error interno del servidor.';
           this.loggerService.insert(log);
-          this.loggerService.console(log);
+          this.loggerService.console(log, 'red');
           this.toastService.callErrorToast(
             'Error interno del servidor, ponte en contacto con nosotros si el problema persiste.'
           );

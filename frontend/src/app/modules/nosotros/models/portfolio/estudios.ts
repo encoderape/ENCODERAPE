@@ -1,13 +1,7 @@
-import { BaseDto } from 'src/app/modules/shared/controls/base-dto';
-
-export class Estudios extends BaseDto {
+export type Estudios = {
   fechaFin: Date;
   nombre: string;
   institucion: string;
   aprendizaje: string;
   ciudad: string;
-
-  constructor(src?: any) {
-    super(src);
-  }
-}
+};

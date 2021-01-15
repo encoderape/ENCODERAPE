@@ -1,4 +1,4 @@
-import { Caracteristicas } from './caracteristicas';
+import { Caracteristicas } from 'src/app/modules/servicios/models/caracteristicas';
 
 export type Steps = {
   imagen: string;
