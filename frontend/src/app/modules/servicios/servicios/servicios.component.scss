@@ -1,0 +1,23 @@
+@import "src/app/styles";
+
+.servicios {
+  width: 100%;
+
+  &-contenedor {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &-steps {
+      width: 100%;
+    }
+
+    &-tecnologias {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      background-color: $components-dark;
+    }
+  }
+}
