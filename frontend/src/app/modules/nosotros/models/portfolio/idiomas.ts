@@ -1,10 +1,4 @@
-import { BaseDto } from 'src/app/modules/shared/controls/base-dto';
-
-export class Idiomas extends BaseDto {
+export type Idiomas = {
   idioma: string;
   nivel: string;
-
-  constructor(src?: any) {
-    super(src);
-  }
-}
+};

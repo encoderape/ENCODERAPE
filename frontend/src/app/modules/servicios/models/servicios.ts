@@ -1,6 +1,6 @@
-import { Steps } from './steps';
-import { Tecnologias } from './tecnologias';
-import { NuestrosServicios } from './nuestrosServicios';
+import { Steps } from 'src/app/modules/servicios/models/steps';
+import { Tecnologias } from 'src/app/modules/servicios/models/tecnologias';
+import { NuestrosServicios } from 'src/app/modules/servicios/models/nuestrosServicios';
 
 export type Servicios = {
   steps: Steps[];

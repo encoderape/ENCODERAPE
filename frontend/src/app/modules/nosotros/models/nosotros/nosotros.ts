@@ -1,17 +1,9 @@
-import { BaseDto } from 'src/app/modules/shared/controls/base-dto';
+import { Habilidades } from 'src/app/modules/nosotros/models/nosotros/habilidades';
+import { Caracteristicas } from 'src/app/modules/nosotros/models/nosotros/caracteristicas';
+import { Trabajadores } from 'src/app/modules/nosotros/models/nosotros/trabajadores';
 
-import { Habilidades } from './habilidades';
-import { Caracteristicas } from './caracteristicas';
-import { Trabajadores } from './trabajadores';
-
-export class Nosotros extends BaseDto {
-  tituloHabilidades: string;
+export type Nosotros = {
   habilidades: Habilidades[];
-  tituloCaracteristicas: string;
   caracteristicas: Caracteristicas[];
   trabajadores: Trabajadores[];
-
-  constructor(src?: any) {
-    super(src);
-  }
-}
+};
