@@ -1,7 +1,7 @@
 @import "src/app/styles";
 
 .servicios {
-  width: 100%;
+  width: 100vw;
 
   &-contenedor {
     display: flex;
@@ -9,15 +9,182 @@
     width: 100%;
 
     &-steps {
+      display: flex;
+      flex-direction: column;
       width: 100%;
+      padding: 50px 0 50px 0;
+
+      .botonera {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .boton {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: none;
+          cursor: pointer;
+          list-style: none;
+
+          a {
+            color: $text-color-light;
+            text-decoration: none;
+          }
+        }
+
+        .separador {
+          width: 40px;
+          height: 7px;
+          background-color: $emphasis-color;
+          list-style: none;
+        }
+        .activado {
+          background-color: $emphasis-color;
+        }
+        .desactivado {
+          background-color: #838383;
+        }
+      }
+
+      .contenido {
+        display: flex;
+        flex-direction: row;
+
+        .imagenes {
+          display: flex;
+          justify-content: flex-end;
+          width: 50%;
+          margin-right: 60px;
+          margin-top: 50px;
+
+          .imagen {
+            width: 500px;
+            height: 500px;
+          }
+        }
+
+        .texto {
+          width: 50%;
+          margin-top: 50px;
+
+          &-item {
+            width: 50%;
+            list-style: none;
+
+            &-titulo {
+              color: $emphasis-color;
+            }
+            &-caracteristicas {
+              margin-top: 20px;
+              .subtitulo {
+                color: $emphasis-color;
+              }
+            }
+          }
+          .texto-item-oculto {
+            display: none;
+          }
+        }
+      }
     }
 
     &-tecnologias {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       flex-wrap: wrap;
-      width: 100%;
+      align-items: center;
       background-color: $components-dark;
+      padding: 30px 0 30px 0;
+      width: 100%;
+      overflow: hidden;
+
+      .titulo {
+        color: $text-color-light;
+      }
+
+      .tecnologias {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 30px;
+        .item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: auto;
+
+          &-icono {
+            color: #838383;
+            font-size: 40px;
+          }
+          &-nombre {
+            color: $text-color-light;
+          }
+        }
+      }
+    }
+
+    &-caracteristicas {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 50px 0 50px 0;
+
+      .titulo {
+        margin-bottom: 50px;
+      }
+
+      .item {
+        display: flex;
+        flex-direction: row;
+
+        &-imagen {
+          width: 50%;
+        }
+        &-texto {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 50%;
+          .titulo {
+            color: $emphasis-color;
+            margin-bottom: 0;
+          }
+          .subtitulo {
+            width: 80%;
+            color: $text-color-dark;
+          }
+
+          &_izquierda {
+            margin-left: 120px;
+          }
+        }
+      }
     }
   }
+}
+
+//slider steps
+
+ul.texto {
+  position: relative;
+  height: 400px;
+}
+ul.texto li {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+ul.texto li:first-child {
+  opacity: 1;
+}
+ul.texto li:target {
+  opacity: 1;
 }
