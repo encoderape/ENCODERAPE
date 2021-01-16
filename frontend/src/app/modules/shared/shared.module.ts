@@ -14,6 +14,7 @@ import { SuccessfulComponent } from 'src/app/modules/shared/toasts/successful/su
 import { WarningComponent } from 'src/app/modules/shared/toasts/warning/warning.component';
 import { InfoComponent } from 'src/app/modules/shared/toasts/info/info.component';
 import { ErrorComponent } from 'src/app/modules/shared/toasts/error/error.component';
+import { PhoneDirective } from './validators/phone/phone.directive';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ErrorComponent } from 'src/app/modules/shared/toasts/error/error.compon
     WarningComponent,
     InfoComponent,
     ErrorComponent,
+    PhoneDirective,
   ],
   exports: [
     HeaderComponent,
@@ -41,6 +43,7 @@ import { ErrorComponent } from 'src/app/modules/shared/toasts/error/error.compon
     WarningComponent,
     ErrorComponent,
     InfoComponent,
+    PhoneDirective,
   ],
   imports: [CommonModule, SharedRouting],
 })

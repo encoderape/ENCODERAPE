@@ -1,11 +1,11 @@
 <div class="contenedor">
-  <h2 class="title">Tu idea está apunto de conocer a nuestros expertos!</h2>
+  <h2 class="title">¡Tu idea está a punto de conocer a nuestros expertos!</h2>
   <div class="contenedor-contacto">
     <form class="contacto" #contactoForm="ngForm">
       <div class="contacto-cabecera">
         <p class="subtitle">
           Por favor rellene el siguiente formulario y nuestro equipo le
-          contestará en la mayor brevedad de tiempo.
+          contestará con la mayor brevedad de tiempo.
         </p>
       </div>
       <div class="contacto-formulario">
@@ -30,6 +30,13 @@
               text
             />
             <i class="fas fa-user input-icon"></i>
+            <span
+              class="tooltip"
+              [ngClass]="{
+                active: nombre.invalid && (nombre.dirty || nombre.touched)
+              }"
+              >El campo "nombre" no acepta números. Ni puede estar vacío.</span
+            >
           </label>
           <label
             class="dato-etiqueta"
@@ -49,8 +56,16 @@
               placeholder="666666666"
               required
               num
+              tlf
             />
             <i class="fas fa-phone input-icon"></i>
+            <span
+              class="tooltip"
+              [ngClass]="{
+                active: telefono.invalid && (telefono.dirty || telefono.touched)
+              }"
+              >El campo "telefono" no acepta letras. Ni puede estar vacío.</span
+            >
           </label>
           <label
             class="dato-etiqueta"
@@ -72,6 +87,14 @@
               email
             />
             <i class="fas fa-envelope input-icon"></i>
+            <span
+              class="tooltip"
+              [ngClass]="{
+                active: correo.invalid && (correo.dirty || correo.touched)
+              }"
+              >El campo "correo electrónico" debe rellenarse con la siguiente
+              estructura: nombre@dominio.com. Ni puede estar vacío.</span
+            >
           </label>
         </div>
         <div class="tipo">
@@ -153,7 +176,7 @@
               #consulting="ngModel"
               [(ngModel)]="contacto.tipo[4]"
             />
-            Consultoria
+            Consultoría
           </label>
         </div>
         <div class="descripcion">
@@ -174,7 +197,7 @@
         </div>
         <div class="prioridad">
           <div>
-            <p>Urgencia?*</p>
+            <p>¿Urgencia?*</p>
             <label
               class="prioridad-etiqueta"
               for="ninguna"

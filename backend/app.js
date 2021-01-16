@@ -25,6 +25,7 @@ MONGOOSE.connect(URI,
 // CORS IMPORT
 const CORS = require('./middlewares/cors.js');
 // ROUTER IMPORTS
+const AYUDA = require('./routes/_ayuda.js');
 const CATALOGO = require('./routes/_catalogo.js');
 const CONTACTO = require('./routes/_contacto.js');
 const LOG = require('./routes/_log.js');
@@ -45,6 +46,7 @@ APP.use(EXPRESS.json());
 APP.use(CORS);
 
 // ENDPOINTS
+APP.use('/ayuda', AYUDA);
 APP.use('/catalogo', CATALOGO);
 APP.use('/contacto', CONTACTO);
 APP.use('/log', LOG);
