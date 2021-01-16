@@ -11,6 +11,7 @@
     &-steps {
       display: flex;
       flex-direction: column;
+      align-items: center;
       width: 100%;
       padding: 50px 0 50px 0;
 
@@ -19,6 +20,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        margin-top: 50px;
 
         .boton {
           display: flex;
@@ -30,15 +32,12 @@
           border: none;
           cursor: pointer;
           list-style: none;
-
-          a {
-            color: $text-color-light;
-            text-decoration: none;
-          }
+          color: $text-color-light;
+          text-decoration: none;
         }
 
         .separador {
-          width: 40px;
+          width: 30px;
           height: 7px;
           background-color: $emphasis-color;
           list-style: none;
@@ -54,6 +53,7 @@
       .contenido {
         display: flex;
         flex-direction: row;
+        width: 100%;
 
         .imagenes {
           display: flex;
@@ -182,9 +182,9 @@ ul.texto li {
   opacity: 0;
   transition: opacity 0.5s;
 }
-ul.texto li:first-child {
+/*ul.texto li:first-child {
   opacity: 1;
-}
+}*/
 ul.texto li:target {
   opacity: 1;
 }
