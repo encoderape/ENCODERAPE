@@ -18,10 +18,7 @@ const CONTROLADOR = {
     async readAll(req, res) {
         try {
             let ayudas = await AYUDA.find({ });
-            res.status(200).send({
-                message: "Ayudas recogidas correctamente.",
-                ayudas,
-            });
+            res.status(200).send(ayudas);
         } catch (e) {
             res.status(500).send({
                 message: "Error al recoger las ayudas.",

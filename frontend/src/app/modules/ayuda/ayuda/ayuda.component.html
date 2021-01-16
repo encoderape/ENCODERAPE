@@ -1,0 +1,56 @@
+<div class="contenedor">
+  <h2 class="title">¡Bienvenid@ al centro de Ayuda!</h2>
+  <h2 class="subtitle">¿Cómo podemos ayudarte?</h2>
+  <div class="contenedor-qya">
+    <div class="respuestas">
+      <div class="ayuda" *ngFor="let ayuda of $ayudas | async">
+        <h3 class="ayuda-pregunta">{{ ayuda.pregunta }}</h3>
+        <p class="ayuda-respuesta">{{ ayuda.respuesta }}</p>
+      </div>
+    </div>
+    <form class="preguntas" #preguntaForm="ngForm">
+      <h3 class="subtitle">
+        Escríbenos tu duda, y será respondida y publicada en esta sección
+        pronto.
+      </h3>
+      <label
+        class="preguntas-etiqueta"
+        for="pregunta"
+        [ngClass]="{
+          invalid: pregunta.invalid && (pregunta.dirty || pregunta.touched)
+        }"
+      >
+        Pregunta*
+        <input
+          class="input"
+          id="pregunta"
+          type="text"
+          name="pregunta"
+          #pregunta="ngModel"
+          [(ngModel)]="ayuda.pregunta"
+          placeholder="¿Haz tu pregunta?"
+          required
+          text
+        />
+        <i class="fas fa-question input-icon"></i>
+        <span
+          class="tooltip"
+          [ngClass]="{
+            active: pregunta.invalid && (pregunta.dirty || pregunta.touched)
+          }"
+        >
+          El campo "pregunta" no acepta números. Ni puede estar vacío.
+        </span>
+      </label>
+      <button
+        type="submit"
+        class="boton"
+        [ngClass]="{ disabled: preguntaForm.invalid }"
+        [disabled]="preguntaForm.invalid"
+        (click)="doSubmit()"
+      >
+        <label>ENVIAR</label>
+      </button>
+    </form>
+  </div>
+</div>
