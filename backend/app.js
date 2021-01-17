@@ -26,10 +26,11 @@ MONGOOSE.connect(URI,
 const CORS = require('./middlewares/cors.js');
 // ROUTER IMPORTS
 const AYUDA = require('./routes/_ayuda.js');
-const NUESTROS_CLIENTES = require('./routes/nuestros-clientes.router.js');
+const COMENTARIO = require('./routes/comentario.router.js');
 const CONTACTO = require('./routes/_contacto.js');
 const LOG = require('./routes/_log.js');
 const NOSOTROS = require('./routes/_nosotros.js');
+const NUESTROS_CLIENTES = require('./routes/nuestros-clientes.router.js');
 const PORTFOLIO = require('./routes/_portfolio.js');
 const SERVICIOS = require('./routes/_servicios.js');
 const USUARIO = require('./routes/_usuario.js');
@@ -47,6 +48,7 @@ APP.use(CORS);
 
 // ENDPOINTS
 APP.use('/ayuda', AYUDA);
+APP.use('/comentario', COMENTARIO);
 APP.use('/contacto', CONTACTO);
 APP.use('/log', LOG);
 APP.use('/nosotros', NOSOTROS);
