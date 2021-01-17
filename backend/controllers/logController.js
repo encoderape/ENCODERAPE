@@ -1,4 +1,4 @@
-const LOG = require('../models/logDTO.js');
+const LOG = require('../models/log.dto.js');
 
 const CONTROLADOR = {
     async create(req, res) {

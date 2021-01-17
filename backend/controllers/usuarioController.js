@@ -1,4 +1,4 @@
-const USUARIO = require('../models/usuarioDTO.js');
+const USUARIO = require('../models/usuario.dto.js');
 
 const CONTROLADOR = {
     async create(req, res) {

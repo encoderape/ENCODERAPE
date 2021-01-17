@@ -1,4 +1,4 @@
-const NOSOTROS = require('../models/nosotrosDTO.js');
+const NOSOTROS = require('../models/nosotros.dto.js');
 
 const CONTROLADOR = {
     async create(req, res) {
