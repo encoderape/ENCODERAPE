@@ -15,10 +15,10 @@ const routes: Routes = [
   },
   {
     data: { title: 'Nuestros Clientes' },
-    path: 'catalogo',
+    path: 'clientes',
     loadChildren: () =>
-      import('src/app/modules/catalogo/catalogo.module').then(
-        (m) => m.CatalogoModule
+      import('src/app/modules/clientes/clientes.module').then(
+        (m) => m.ClientesModule
       ),
   },
   {

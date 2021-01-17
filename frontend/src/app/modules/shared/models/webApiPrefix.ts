@@ -1,6 +1,6 @@
 export type IWebApiPrefix = {
   ayuda: string;
-  catalogo: string;
+  clientes: string;
   contacto: string;
   log: string;
   nosotros: string;
