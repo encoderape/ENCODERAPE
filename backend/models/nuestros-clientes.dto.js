@@ -1,6 +1,6 @@
 const MONGOOSE = require('mongoose');
 
-const CATALOGO = new MONGOOSE.Schema(
+const NUESTROS_CLIENTES = new MONGOOSE.Schema(
     {
         nombre: {
             type: String,
@@ -22,5 +22,5 @@ const CATALOGO = new MONGOOSE.Schema(
     {timestamps: true}
 );
 
-const MODEL = MONGOOSE.model('catalogo', CATALOGO);
+const MODEL = MONGOOSE.model('nuestros-clientes', NUESTROS_CLIENTES);
 module.exports = MODEL;
