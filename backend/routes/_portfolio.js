@@ -1,6 +1,6 @@
 const EXPRESS = require('express');
 
-const PORTFOLIO = require('../controllers/portfolioController.js');
+const PORTFOLIO = require('../controllers/portfolio.controller.js');
 
 const ROUTER = EXPRESS.Router();
 

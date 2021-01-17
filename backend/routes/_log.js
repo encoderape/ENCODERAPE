@@ -1,6 +1,6 @@
 const EXPRESS = require('express');
 
-const LOG = require('../controllers/logController.js');
+const LOG = require('../controllers/log.controller.js');
 
 const ROUTER = EXPRESS.Router();
 

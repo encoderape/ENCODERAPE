@@ -1,6 +1,6 @@
 const EXPRESS = require('express');
 
-const CONTACTO = require('../controllers/contactoController.js');
+const CONTACTO = require('../controllers/contacto.controller.js');
 
 const ROUTER = EXPRESS.Router();
 

@@ -1,6 +1,6 @@
 const EXPRESS = require('express');
 
-const NOSOTROS = require('../controllers/nosotrosController.js');
+const NOSOTROS = require('../controllers/nosotros.controller.js');
 
 const ROUTER = EXPRESS.Router();
 
