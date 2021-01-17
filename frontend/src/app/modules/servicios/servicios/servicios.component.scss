@@ -43,10 +43,13 @@
           list-style: none;
         }
         .activado {
-          background-color: $emphasis-color;
+          transition: all ease 1s;
+          box-shadow: inset 40px 0 0 0 $emphasis-color;
         }
         .desactivado {
-          background-color: #838383;
+          color: $text-color-light;
+          transition: all ease 1s;
+          box-shadow: inset 0 0 0 40px $text-color-dark;
         }
       }
 
@@ -82,7 +85,7 @@
             &-caracteristicas {
               margin-top: 20px;
               .subtitulo {
-                color: $emphasis-color;
+                color: $text-color-dark;
               }
             }
           }
@@ -182,9 +185,9 @@ ul.texto li {
   opacity: 0;
   transition: opacity 0.5s;
 }
-/*ul.texto li:first-child {
+ul.texto li:first-child {
   opacity: 1;
-}*/
+}
 ul.texto li:target {
   opacity: 1;
 }
