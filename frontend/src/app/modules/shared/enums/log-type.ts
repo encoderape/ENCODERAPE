@@ -1,6 +1,6 @@
 export enum LogType {
   AYUDA = 'ayuda',
-  CATALOGO = 'catalogo',
+  CLIENTES = 'clientes',
   CONTACTO = 'contacto',
   LOG = 'log',
   NOSOTROS = 'nosotros',

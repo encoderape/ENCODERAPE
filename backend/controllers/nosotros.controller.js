@@ -1,4 +1,4 @@
-const NOSOTROS = require('../models/nosotrosDTO.js');
+const NOSOTROS = require('../models/nosotros.dto.js');
 
 const CONTROLADOR = {
     async create(req, res) {
@@ -18,29 +18,17 @@ const CONTROLADOR = {
     async readAll(req, res) {
         try {
             let nosotros = await NOSOTROS.find({ });
-            res.status(200).send({
-                message: "Nosotros recogidos correctamente.",
-                nosotros,
-            });
+            res.status(200).send(nosotros);
         } catch (e) {
-            res.status(500).send({
-                message: "Error al recoger nosotros.",
-                e,
-            });
+            res.status(500).send(e);
         }
     },
     async readById(req, res) {
         try {
             let nosotros = await NOSOTROS.findById({_id: req.params._id});
-            res.status(200).send({
-                message: "Nosotros recogido correctamente.",
-                nosotros,
-            });
+            res.status(200).send(nosotros);
         } catch (e) {
-            res.status(404).send({
-                message: "Error al recoger nosotros.",
-                e,
-            });
+            res.status(404).send(e);
         }
     },
     async update(req, res){

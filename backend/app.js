@@ -25,14 +25,15 @@ MONGOOSE.connect(URI,
 // CORS IMPORT
 const CORS = require('./middlewares/cors.js');
 // ROUTER IMPORTS
-const AYUDA = require('./routes/_ayuda.js');
-const CATALOGO = require('./routes/_catalogo.js');
-const CONTACTO = require('./routes/_contacto.js');
-const LOG = require('./routes/_log.js');
-const NOSOTROS = require('./routes/_nosotros.js');
-const PORTFOLIO = require('./routes/_portfolio.js');
-const SERVICIOS = require('./routes/_servicios.js');
-const USUARIO = require('./routes/_usuario.js');
+const _AYUDA = require('./routes/ayuda.router.js');
+const _COMENTARIO = require('./routes/comentario.router.js');
+const _CONTACTO = require('./routes/contacto.router.js');
+const _LOG = require('./routes/log.router.js');
+const _NOSOTROS = require('./routes/nosotros.router.js');
+const _NUESTROS_CLIENTES = require('./routes/nuestros-clientes.router.js');
+const _PORTFOLIO = require('./routes/portfolio.router.js');
+const _SERVICIOS = require('./routes/servicios.router.js');
+const _USUARIO = require('./routes/usuario.router.js');
 
 const APP = EXPRESS();
 
@@ -46,14 +47,15 @@ APP.use(EXPRESS.json());
 APP.use(CORS);
 
 // ENDPOINTS
-APP.use('/ayuda', AYUDA);
-APP.use('/catalogo', CATALOGO);
-APP.use('/contacto', CONTACTO);
-APP.use('/log', LOG);
-APP.use('/nosotros', NOSOTROS);
-APP.use('/portfolio', PORTFOLIO);
-APP.use('/servicios', SERVICIOS);
-APP.use('/usuario', USUARIO);
+APP.use('/ayuda', _AYUDA);
+APP.use('/comentario', _COMENTARIO);
+APP.use('/contacto', _CONTACTO);
+APP.use('/log', _LOG);
+APP.use('/nosotros', _NOSOTROS);
+APP.use('/clientes', _NUESTROS_CLIENTES);
+APP.use('/portfolio', _PORTFOLIO);
+APP.use('/servicios', _SERVICIOS);
+APP.use('/usuario', _USUARIO);
 
 // LISTENER
 APP.listen(PORT, () => {

@@ -1,4 +1,4 @@
-const PORTFOLIO = require('../models/portfolioDTO.js');
+const PORTFOLIO = require('../models/portfolio.dto.js');
 
 const CONTROLADOR = {
     async create(req, res) {
@@ -18,29 +18,17 @@ const CONTROLADOR = {
     async readAll(req, res) {
         try {
             let portfolio = await PORTFOLIO.find({ });
-            res.status(200).send({
-                message: "Portfolios recogidos correctamente.",
-                portfolio,
-            });
+            res.status(200).send(portfolio);
         } catch (e) {
-            res.status(500).send({
-                message: "Error al recoger los portfolios.",
-                e,
-            });
+            res.status(500).send(e);
         }
     },
     async readById(req, res) {
         try {
             let portfolio = await PORTFOLIO.findById({_id: req.params._id});
-            res.status(200).send({
-                message: "Portfolio recogido correctamente.",
-                portfolio,
-            });
+            res.status(200).send(portfolio);
         } catch (e) {
-            res.status(404).send({
-                message: "Error al recoger el portfolio.",
-                e,
-            });
+            res.status(404).send(e);
         }
     },
     async update(req, res){

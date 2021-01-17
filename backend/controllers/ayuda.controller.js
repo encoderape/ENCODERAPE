@@ -1,4 +1,4 @@
-const AYUDA = require('../models/ayudaDTO.js');
+const AYUDA = require('../models/ayuda.dto.js');
 
 const CONTROLADOR = {
     async create(req, res) {
@@ -20,24 +20,15 @@ const CONTROLADOR = {
             let ayudas = await AYUDA.find({ });
             res.status(200).send(ayudas);
         } catch (e) {
-            res.status(500).send({
-                message: "Error al recoger las ayudas.",
-                e,
-            });
+            res.status(500).send(e);
         }
     },
     async readById(req, res) {
         try {
             let ayuda = await AYUDA.findById({_id: req.params._id});
-            res.status(200).send({
-                message: "Ayuda recogida correctamente.",
-                ayuda,
-            });
+            res.status(200).send(ayuda);
         } catch (e) {
-            res.status(404).send({
-                message: "Error al recoger la ayuda.",
-                e,
-            });
+            res.status(404).send(e);
         }
     },
     async update(req, res) {

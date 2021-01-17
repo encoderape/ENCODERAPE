@@ -1,4 +1,4 @@
-const CONTACTO = require('../models/contactoDTO.js');
+const CONTACTO = require('../models/contacto.dto.js');
 
 const CONTROLADOR = {
     async create(req, res) {
@@ -17,30 +17,18 @@ const CONTROLADOR = {
     },
     async readAll(req, res) {
         try {
-            let contacto = await CONTACTO.find({ });
-            res.status(200).send({
-                message: "Contactos recogidos correctamente.",
-                contacto,
-            });
+            let contactos = await CONTACTO.find({ });
+            res.status(200).send(contactos);
         } catch (e) {
-            res.status(500).send({
-                message: "Error al recoger los contactos.",
-                e,
-            });
+            res.status(500).send(e);
         }
     },
     async readById(req, res) {
         try {
             let contacto = await CONTACTO.findById({_id: req.params._id});
-            res.status(200).send({
-                message: "Contacto recogido correctamente.",
-                contacto,
-            });
+            res.status(200).send(contacto);
         } catch (e) {
-            res.status(404).send({
-                message: "Error al recoger el contacto.",
-                e,
-            });
+            res.status(404).send(e);
         }
     },
     async delete(req, res) {

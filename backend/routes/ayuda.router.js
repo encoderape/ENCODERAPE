@@ -1,6 +1,6 @@
 const EXPRESS = require('express');
 
-const AYUDA = require('../controllers/ayudaController.js');
+const AYUDA = require('../controllers/ayuda.controller.js');
 
 const ROUTER = EXPRESS.Router();
 
