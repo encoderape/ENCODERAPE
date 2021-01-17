@@ -18,29 +18,17 @@ const CONTROLADOR = {
     async readAll(req, res) {
         try {
             let usuarios = await USUARIO.find({ });
-            res.status(200).send({
-                message: "Usuarios recogidos correctamente.",
-                usuarios,
-            });
+            res.status(200).send(usuarios);
         } catch (e) {
-            res.status(500).send({
-                message: "Error al recoger los usuarios.",
-                e,
-            });
+            res.status(500).send(e);
         }
     },
     async readById(req, res) {
         try {
             let usuario = await USUARIO.findById({_id: req.params._id});
-            res.status(200).send({
-                message: "Usuario recogido correctamente.",
-                usuario,
-            });
+            res.status(200).send(usuario);
         } catch (e) {
-            res.status(404).send({
-                message: "Error al recoger el usuario.",
-                e,
-            });
+            res.status(404).send(e);
         }
     },
     async update(req, res) {

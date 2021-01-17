@@ -18,29 +18,17 @@ const CONTROLADOR = {
     async readAll(req, res) {
         try {
             let servicios = await SERVICIOS.find({ });
-            res.status(200).send({
-                message: "Servicios recogidos correctamente.",
-                servicios,
-            });
+            res.status(200).send(servicios);
         } catch (e) {
-            res.status(500).send({
-                message: "Error al recoger los servicios.",
-                e,
-            });
+            res.status(500).send(e);
         }
     },
     async readById(req, res) {
         try {
             let servicios = await SERVICIOS.findById({_id: req.params._id});
-            res.status(200).send({
-                message: "Servicio recogido correctamente.",
-                servicios,
-            });
+            res.status(200).send(servicios);
         } catch (e) {
-            res.status(404).send({
-                message: "Error al recoger el servicio.",
-                e,
-            });
+            res.status(404).send(e);
         }
     },
     async update(req, res){
