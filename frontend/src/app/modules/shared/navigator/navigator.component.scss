@@ -12,6 +12,11 @@
     display: flex;
     list-style: none;
 
+    @include mobileL {
+      flex-direction: column;
+      align-items: center;
+    }
+
     &-item {
       margin: 10px 10px 4px 10px;
 
