@@ -25,37 +25,60 @@
     </div>
     <div class="comentarios">
       <form class="comentario-form" #comentarioForm="ngForm">
-        <h3 class="subtitle">
-          Escríbenos tu duda, y será respondida y publicada en esta sección
-          pronto.
-        </h3>
         <label
-          class="preguntas-etiqueta"
-          for="pregunta"
+          class="comentario-etiqueta"
+          for="empresa"
           [ngClass]="{
-            invalid: pregunta.invalid && (pregunta.dirty || pregunta.touched)
+            invalid: empresa.invalid && (empresa.dirty || empresa.touched)
           }"
         >
-          Pregunta*
+          Nombre Empresa*
           <input
             class="input"
-            id="pregunta"
+            id="empresa"
             type="text"
-            name="pregunta"
-            #pregunta="ngModel"
+            name="empresa"
+            #empresa="ngModel"
             [(ngModel)]="comentario.nombreEmpresa"
-            placeholder="¿Haz tu pregunta?"
+            placeholder="ENCODERAPE"
             required
-            text
           />
           <i class="fas fa-question input-icon"></i>
           <span
             class="tooltip"
             [ngClass]="{
-              active: pregunta.invalid && (pregunta.dirty || pregunta.touched)
+              active: empresa.invalid && (empresa.dirty || empresa.touched)
             }"
           >
-            El campo "pregunta" no acepta números. Ni puede estar vacío.
+            El campo "nombre empresa" no puede estar vacío.
+          </span>
+        </label>
+        <label
+          class="comentario-etiqueta"
+          for="comentario"
+          [ngClass]="{
+            invalid: coment.invalid && (coment.dirty || coment.touched)
+          }"
+        >
+          Comentario*
+          <input
+            class="input"
+            id="comentario"
+            type="text"
+            name="coment"
+            #coment="ngModel"
+            [(ngModel)]="comentario.comentario"
+            placeholder="Escríbenos un comentario ..."
+            required
+          />
+          <i class="fas fa-question input-icon"></i>
+          <span
+            class="tooltip"
+            [ngClass]="{
+              active: coment.invalid && (coment.dirty || coment.touched)
+            }"
+          >
+            El campo "comentario" no puede estar vacío.
           </span>
         </label>
         <button
@@ -68,6 +91,13 @@
           <label>ENVIAR</label>
         </button>
       </form>
+      <div
+        class="contenedor-comentarios"
+        *ngFor="let coment of $comentarios | async"
+      >
+        <h3>{{ coment.nombreEmpresa }}</h3>
+        <p>{{ coment.comentario }}</p>
+      </div>
     </div>
   </div>
 </div>
