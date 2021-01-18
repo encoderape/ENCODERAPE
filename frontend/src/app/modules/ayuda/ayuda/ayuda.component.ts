@@ -12,7 +12,7 @@ export class AyudaComponent {
   $ayudas = this.ayudaService.getAyudas();
   ayuda: Ayuda;
 
-  constructor(public ayudaService: AyudaService) {
+  constructor(private ayudaService: AyudaService) {
     this.ayuda = {
       pregunta: '',
       respuesta: '',

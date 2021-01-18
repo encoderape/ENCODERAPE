@@ -95,15 +95,6 @@
   transition: 0.5s;
   text-align: center;
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: -15%;
-    left: 50%;
-    border: 5px solid;
-    border-color: transparent transparent $color-error transparent;
-  }
-
   &.active {
     visibility: visible;
     opacity: 1;

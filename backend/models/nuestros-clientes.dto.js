@@ -18,6 +18,10 @@ const NUESTROS_CLIENTES = new MONGOOSE.Schema(
             type: String,
             required: true,
         },
+        tag: {
+            type: [String],
+            required: true,
+        }
     },
     {timestamps: true}
 );

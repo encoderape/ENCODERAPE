@@ -2,23 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CrudService } from 'src/app/modules/shared/services/crud.service';
+import { NuestrosClientes } from 'src/app/modules/clientes/models/nuestros-clientes';
 import { PREFIX } from 'src/app/modules/shared/config/webApiPrefix.config';
-import { Ayuda } from 'src/app/modules/ayuda/models/ayuda';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AyudaService extends CrudService<Ayuda> {
+export class NuestrosClientesService extends CrudService<NuestrosClientes> {
   constructor(http: HttpClient) {
     super(http);
-    this.withUrlPrefix(PREFIX.ayuda);
+    this.withUrlPrefix(PREFIX.clientes);
   }
 
-  insert(item: Ayuda): void {
-    this.create(item).subscribe();
-  }
-
-  getAyudas(): Observable<Ayuda[]> {
+  getClientes(): Observable<NuestrosClientes[]> {
     return this.get();
   }
 }

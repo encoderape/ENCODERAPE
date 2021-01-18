@@ -1,0 +1,73 @@
+<div class="contenedor">
+  <h2 class="title">¡Testimonios y Comentarios de nuestros clientes!</h2>
+  <div class="contenedor-clientes">
+    <div class="testimonios">
+      <div class="testimonio" *ngFor="let testimonio of $testimonios | async">
+        <h3 class="testimonio-nombre">{{ testimonio.nombre | uppercase }}</h3>
+        <video class="testimonio-reproductor" controls>
+          <source src="{{ testimonio.video }}" type="video/mp4" />
+        </video>
+        <div class="contenedor-tags">
+          <label class="testimonio-tags" *ngFor="let tags of testimonio.tag">{{
+            tags | uppercase
+          }}</label>
+        </div>
+        <h4>Comentario del CEO</h4>
+        <p class="testimonio-comentario">{{ testimonio.comentario }}</p>
+        <a
+          class="testimonio-enlace"
+          href="{{ testimonio.url }}"
+          target="_blank"
+        >
+          <label>Ir al sitio Web</label>
+        </a>
+      </div>
+    </div>
+    <div class="comentarios">
+      <form class="comentario-form" #comentarioForm="ngForm">
+        <h3 class="subtitle">
+          Escríbenos tu duda, y será respondida y publicada en esta sección
+          pronto.
+        </h3>
+        <label
+          class="preguntas-etiqueta"
+          for="pregunta"
+          [ngClass]="{
+            invalid: pregunta.invalid && (pregunta.dirty || pregunta.touched)
+          }"
+        >
+          Pregunta*
+          <input
+            class="input"
+            id="pregunta"
+            type="text"
+            name="pregunta"
+            #pregunta="ngModel"
+            [(ngModel)]="comentario.nombreEmpresa"
+            placeholder="¿Haz tu pregunta?"
+            required
+            text
+          />
+          <i class="fas fa-question input-icon"></i>
+          <span
+            class="tooltip"
+            [ngClass]="{
+              active: pregunta.invalid && (pregunta.dirty || pregunta.touched)
+            }"
+          >
+            El campo "pregunta" no acepta números. Ni puede estar vacío.
+          </span>
+        </label>
+        <button
+          type="submit"
+          class="boton"
+          [ngClass]="{ disabled: comentarioForm.invalid }"
+          [disabled]="comentarioForm.invalid"
+          (click)="doSubmit()"
+        >
+          <label>ENVIAR</label>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+@import "src/app/styles";
+
+.contenedor {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 60px 0 20px 0;
+
+  &-clientes {
+    display: flex;
+    margin: 20px 0;
+  }
+}
+
+.testimonios {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 40px;
+
+  .testimonio {
+    width: 702px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid $emphasis-color;
+    box-shadow: 1px 1px 3px $components-dark;
+    transition: 0.5s;
+
+    &-nombre {
+      margin: 10px 0;
+    }
+
+    &-reproductor {
+      margin: 10px 0;
+      width: 680px;
+      height: 360px;
+    }
+
+    .contenedor-tags {
+      display: flex;
+
+      .testimonio-tags {
+        padding: 5px 10px;
+        margin: 10px 5px;
+        background-color: $emphasis-color-hover;
+        border: 3px solid $emphasis-color;
+        color: $text-color-light;
+      }
+    }
+
+    &-comentario {
+      margin: 10px 0;
+      text-align: justify;
+    }
+
+    &-enlace {
+      margin: 10px 0;
+      text-decoration: none;
+
+      & label {
+        cursor: pointer;
+
+        &:hover {
+          color: $emphasis-color;
+          border-bottom: 1px solid $emphasis-color;
+        }
+      }
+    }
+  }
+}

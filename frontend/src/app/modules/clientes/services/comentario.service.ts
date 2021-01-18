@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { CrudService } from 'src/app/modules/shared/services/crud.service';
+import { Comentario } from 'src/app/modules/clientes/models/comentario';
+import { HttpClient } from '@angular/common/http';
 import { PREFIX } from 'src/app/modules/shared/config/webApiPrefix.config';
-import { Ayuda } from 'src/app/modules/ayuda/models/ayuda';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AyudaService extends CrudService<Ayuda> {
+export class ComentarioService extends CrudService<Comentario> {
   constructor(http: HttpClient) {
     super(http);
-    this.withUrlPrefix(PREFIX.ayuda);
+    this.withUrlPrefix(PREFIX.comentario);
   }
 
-  insert(item: Ayuda): void {
+  insert(item: Comentario): void {
     this.create(item).subscribe();
   }
 
-  getAyudas(): Observable<Ayuda[]> {
+  getComentarios(): Observable<Comentario[]> {
     return this.get();
   }
 }
