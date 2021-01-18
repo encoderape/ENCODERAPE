@@ -1,4 +1,5 @@
 @import "colors";
+@import "animations";
 
 .site {
   display: flex;
@@ -33,28 +34,6 @@
   z-index: 1;
   justify-content: space-around;
   align-items: center;
-
-  @keyframes fadeUp {
-    from {
-      bottom: 0;
-      opacity: 0;
-    }
-    to {
-      bottom: 25px;
-      opacity: 1;
-    }
-  }
-
-  @keyframes fadeDown {
-    from {
-      bottom: 25px;
-      opacity: 1;
-    }
-    to {
-      bottom: 0;
-      opacity: 0;
-    }
-  }
 
   &.error {
     background-color: $color-error;

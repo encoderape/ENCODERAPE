@@ -1,0 +1,21 @@
+@keyframes fadeUp {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 25px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    bottom: 25px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
