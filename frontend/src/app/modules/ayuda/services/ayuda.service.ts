@@ -14,10 +14,19 @@ export class AyudaService extends CrudService<Ayuda> {
     this.withUrlPrefix(PREFIX.ayuda);
   }
 
+  /**
+   * Método para insertar una Ayuda en la BD
+   * @param item: Contacto
+   * @return void
+   */
   insert(item: Ayuda): void {
     this.create(item).subscribe();
   }
 
+  /**
+   * Método para recoger las ayudas de la BD
+   * @return Observable<Ayuda[]>
+   */
   getAyudas(): Observable<Ayuda[]> {
     return this.get();
   }
