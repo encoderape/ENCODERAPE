@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { setClassMetadata } from '@angular/core/src/r3_symbols';
 
 @Component({
   selector: 'ape-navigator',

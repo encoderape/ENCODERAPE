@@ -12,7 +12,7 @@ export class ServiciosComponent implements OnInit {
   constructor(private serviciosService: ServiciosService) {}
 
   ngOnInit(): void {
-    document.getElementById('boton1').addEventListener('click', () => {
+    /*document.getElementById('boton1').addEventListener('click', () => {
       document.getElementById('slide1').style.opacity = '1';
       document.getElementById('slide2').style.opacity = '0';
       document.getElementById('slide3').style.opacity = '0';
@@ -133,7 +133,6 @@ export class ServiciosComponent implements OnInit {
         document.getElementById('boton4').className = 'boton activado';
         document.getElementById('boton4').style.transitionDelay = '1s';
       }
-    });
+    });*/
   }
-
 }

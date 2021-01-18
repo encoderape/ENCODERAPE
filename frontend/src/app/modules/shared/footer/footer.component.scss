@@ -12,10 +12,18 @@
     display: flex;
     margin-top: 10px;
 
+    @include mobileL {
+      flex-direction: column;
+    }
+
     &-group {
       display: flex;
       flex-direction: column;
       margin: 5px 20px;
+
+      @include mobileL {
+        margin-top: 20px;
+      }
 
       & h3 {
         color: $text-color-light;
