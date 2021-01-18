@@ -1,17 +1,17 @@
-<div class="contenedor">
+<div class="contenedor flex-column w-100">
   <h2 class="title">¡Tu idea está a punto de conocer a nuestros expertos!</h2>
-  <div class="contenedor-contacto">
-    <form class="contacto" #contactoForm="ngForm">
+  <div class="contenedor-contacto flex-row">
+    <form class="contacto flex-column" #contactoForm="ngForm">
       <div class="contacto-cabecera">
         <p class="subtitle">
           Por favor rellene el siguiente formulario y nuestro equipo le
           contestará con la mayor brevedad de tiempo.
         </p>
       </div>
-      <div class="contacto-formulario">
-        <div class="dato">
+      <div class="contacto-formulario flex-column">
+        <div class="dato flex-row w-100">
           <label
-            class="dato-etiqueta"
+            class="dato-etiqueta relative"
             for="nombre"
             [ngClass]="{
               invalid: nombre.invalid && (nombre.dirty || nombre.touched)
@@ -39,7 +39,7 @@
             >
           </label>
           <label
-            class="dato-etiqueta"
+            class="dato-etiqueta relative"
             for="telefono"
             [ngClass]="{
               invalid: telefono.invalid && (telefono.dirty || telefono.touched)
@@ -68,7 +68,7 @@
             >
           </label>
           <label
-            class="dato-etiqueta"
+            class="dato-etiqueta relative"
             for="correo"
             [ngClass]="{
               invalid: correo.invalid && (correo.dirty || correo.touched)
@@ -97,9 +97,9 @@
             >
           </label>
         </div>
-        <div class="tipo">
+        <div class="tipo flex-row w-100">
           <label
-            class="tipo-etiqueta"
+            class="tipo-etiqueta flex-column"
             for="web"
             [ngClass]="{ active: web.value === true }"
           >
@@ -115,7 +115,7 @@
             Aplicación Web
           </label>
           <label
-            class="tipo-etiqueta"
+            class="tipo-etiqueta flex-column"
             for="mobile"
             [ngClass]="{ active: mobile.value === true }"
           >
@@ -131,7 +131,7 @@
             Aplicación Móvil
           </label>
           <label
-            class="tipo-etiqueta"
+            class="tipo-etiqueta flex-column"
             for="design"
             [ngClass]="{ active: design.value === true }"
           >
@@ -147,7 +147,7 @@
             UX/UI
           </label>
           <label
-            class="tipo-etiqueta"
+            class="tipo-etiqueta flex-column"
             for="analysis"
             [ngClass]="{ active: analysis.value === true }"
           >
@@ -163,7 +163,7 @@
             Análisis de Proyectos
           </label>
           <label
-            class="tipo-etiqueta"
+            class="tipo-etiqueta flex-column"
             for="consulting"
             [ngClass]="{ active: consulting.value === true }"
           >
@@ -179,8 +179,8 @@
             Consultoría
           </label>
         </div>
-        <div class="descripcion">
-          <label class="descripcion-etiqueta" for="descripcion">
+        <div class="descripcion flex-row w-100">
+          <label class="descripcion-etiqueta flex-row w-100" for="descripcion">
             Cuentanos sobre tu idea*
             <textarea
               class="textarea"
@@ -195,11 +195,11 @@
             ></textarea>
           </label>
         </div>
-        <div class="prioridad">
-          <div>
+        <div class="prioridad flex-row content-center w-100">
+          <div class="flex-row">
             <p>¿Urgencia?*</p>
             <label
-              class="prioridad-etiqueta"
+              class="prioridad-etiqueta flex-column"
               for="ninguna"
               [ngClass]="{ active: ninguna.value !== '' }"
             >
@@ -215,7 +215,7 @@
               Ninguna
             </label>
             <label
-              class="prioridad-etiqueta"
+              class="prioridad-etiqueta flex-column"
               for="baja"
               [ngClass]="{ active: baja.value !== '' }"
             >
@@ -231,7 +231,7 @@
               Baja
             </label>
             <label
-              class="prioridad-etiqueta"
+              class="prioridad-etiqueta flex-column"
               for="alta"
               [ngClass]="{ active: alta.value !== '' }"
             >
@@ -248,11 +248,11 @@
             </label>
           </div>
         </div>
-        <div class="terminos">
-          <label class="terminos-etiqueta" for="terminos">
+        <div class="terminos flex-row content-center w-100">
+          <label class="terminos-etiqueta flex-row" for="terminos">
             <div>
               <input
-                class="checkbox"
+                class="checkbox-terminos"
                 id="terminos"
                 type="checkbox"
                 name="terminos"
@@ -282,23 +282,23 @@
         <label>ENVIAR</label>
       </button>
     </form>
-    <div class="informacion">
+    <div class="informacion flex-column">
       <div class="informacion-cabecera">
         <p class="subtitle">
-          También puedes enviarnos un correo electrónico o llamarnos por
-          teléfono
+          También puedes enviarnos un correo electrónico, llamarnos por teléfono
+          o por nuestras redes sociales.
         </p>
       </div>
-      <div class="informacion-contacto">
-        <div>
+      <div class="informacion-contacto flex-column w-100">
+        <div class="flex-row">
           <p>Correo electrónico de contacto:</p>
           <p class="importante">ape@encoderape.com</p>
         </div>
-        <div>
+        <div class="flex-row">
           <p>Alejandro González:</p>
           <p class="importante">648183931</p>
         </div>
-        <div>
+        <div class="flex-row">
           <p>Ramses Moreno:</p>
           <p class="importante">630149142</p>
         </div>
@@ -307,6 +307,24 @@
         <p>Horarios de atención al cliente</p>
         <p>Lunes a Viernes de 8:00-21:00</p>
         <p>Sábados de 9:00-14:00</p>
+      </div>
+      <div class="informacion-redes flex-column">
+        <a class="flex-row" href="">
+          <i class="fab fa-instagram-square icon"></i>
+          <label class="enlaces">Instagram</label>
+        </a>
+        <a class="flex-row" href="">
+          <i class="fab fa-facebook-square icon"></i>
+          <label class="enlaces">Facebook</label>
+        </a>
+        <a class="flex-row" href="">
+          <i class="fab fa-linkedin icon"></i>
+          <label class="enlaces">LinkedIn</label>
+        </a>
+        <a class="flex-row" href="">
+          <i class="fab fa-twitter-square icon"></i>
+          <label class="enlaces">Twitter</label>
+        </a>
       </div>
     </div>
   </div>

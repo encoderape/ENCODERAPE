@@ -1,7 +1,7 @@
 export enum CheckboxType {
-  Web = 'Aplicación Web',
-  Movil = 'Aplicación Móvil',
-  Design = 'UX/UI Design',
-  Analysis = 'Análisis de Proyectos',
-  Consulting = 'Consultoría',
+  WEB = 'Aplicación Web',
+  MOVIL = 'Aplicación Móvil',
+  DESING = 'UX/UI Design',
+  ANALYSIS = 'Análisis de Proyectos',
+  CONSULTING = 'Consultoría',
 }

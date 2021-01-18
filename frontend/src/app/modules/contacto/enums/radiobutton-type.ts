@@ -1,6 +1,6 @@
 export enum RadiobuttonType {
-  Alta = 'Alta',
-  Baja = 'Baja',
-  Ninguna = 'Ninguna',
-  Vacio = '',
+  ALTA = 'Alta',
+  BAJA = 'Baja',
+  NINGUNA = 'Ninguna',
+  VACIO = '',
 }

@@ -13,6 +13,11 @@ export class ContactoService extends CrudService<Contacto> {
     this.withUrlPrefix(PREFIX.contacto);
   }
 
+  /**
+   * Método para insertar un Contacto en la BD
+   * @param item: Contacto
+   * @return void
+   */
   insert(item: Contacto): void {
     this.create(item).subscribe();
   }

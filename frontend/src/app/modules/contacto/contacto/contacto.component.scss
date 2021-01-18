@@ -1,74 +1,33 @@
 @import "src/app/styles";
 
-.contenedor {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 60px 0 20px 0;
-
-  &-contacto {
-    display: flex;
-    margin: 20px 0;
-  }
+.contenedor-contacto {
+  margin: 20px 0;
 }
 
 .contacto {
   width: 70%;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   padding: 10px 20px;
 
-  &-cabecera {
-    padding: 10px 0;
-  }
-
   &-formulario {
-    display: flex;
-    flex-direction: column;
     padding: 0 30px;
 
     .dato {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin: 20px 10px;
-
-      &-etiqueta {
-        position: relative;
-        &.invalid {
-          .input {
-            border-bottom-color: $color-error;
-            box-shadow: 0 2px $color-error;
-          }
-
-          .input-icon {
-            color: $color-error;
-            border-bottom-color: $color-error;
-            box-shadow: 0 2px $color-error;
-          }
+      &-etiqueta.invalid {
+        .input {
+          border-bottom-color: $color-error;
+          box-shadow: 0 2px $color-error;
         }
 
+        .input-icon {
+          color: $color-error;
+          border-bottom-color: $color-error;
+          box-shadow: 0 2px $color-error;
+        }
+      }
+      &-etiqueta {
         .input {
           width: 250px;
-          border: transparent;
-          border-bottom: 1px solid $emphasis-color;
-          padding: 3px;
-          margin-left: 5px;
-          transition: 0.5s;
-
-          &:hover,
-          &:focus {
-            box-shadow: 0 2px $emphasis-color;
-            color: $emphasis-color;
-
-            & ~ .input-icon {
-              box-shadow: 0 2px $emphasis-color;
-              color: $emphasis-color;
-            }
-          }
         }
 
         .input-icon {
@@ -82,15 +41,7 @@
     }
 
     .tipo {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin: 20px 10px;
-
       &-etiqueta {
-        display: flex;
-        flex-direction: column;
         justify-content: space-around;
         align-items: center;
         width: 160px;
@@ -98,17 +49,6 @@
         text-align: center;
         cursor: pointer;
         transition: 0.5s;
-
-        .checkbox {
-          display: none;
-        }
-
-        .checkbox-icon {
-          font-size: 40px;
-          color: $text-color-dark;
-          padding: 5px;
-          transition: 0.5s;
-        }
 
         &:hover,
         &.active {
@@ -123,57 +63,30 @@
     }
 
     .descripcion {
-      width: 100%;
-      display: flex;
       align-items: center;
       margin: 20px 30px;
 
       &-etiqueta {
-        width: 100%;
-        display: flex;
         align-items: center;
 
         .textarea {
           flex-grow: 1;
-          padding: 3px;
-          margin-left: 5px;
           margin-right: 40px;
           height: 70px;
-          border: transparent;
-          border-bottom: 1px solid $emphasis-color;
-          transition: 0.5s;
-
-          &:hover,
-          &:focus {
-            box-shadow: 0 2px $emphasis-color;
-            color: $emphasis-color;
-
-            & ~ .input-icon {
-              box-shadow: 0 2px $emphasis-color;
-              color: $emphasis-color;
-            }
-          }
         }
       }
     }
 
     .prioridad {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       margin: 20px 10px;
 
       & div {
         width: 50%;
-        display: flex;
         justify-content: space-around;
         align-items: center;
       }
 
       &-etiqueta {
-        display: flex;
-        flex-direction: column;
         justify-content: space-around;
         align-items: center;
         width: 100px;
@@ -181,17 +94,6 @@
         text-align: center;
         cursor: pointer;
         transition: 0.5s;
-
-        .radiobutton {
-          display: none;
-        }
-
-        .radiobutton-icon {
-          font-size: 40px;
-          color: $text-color-dark;
-          padding: 5px;
-          transition: 0.5s;
-        }
 
         &:hover,
         &.active {
@@ -206,18 +108,13 @@
     }
 
     .terminos {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       margin: 20px 0;
 
       &-etiqueta {
         width: 60%;
-        display: flex;
         align-items: center;
 
-        .checkbox {
+        .checkbox-terminos {
           width: 20px;
           height: 20px;
           cursor: pointer;
@@ -240,64 +137,91 @@
       }
     }
   }
-
-  .boton {
-    margin-top: 20px;
-    padding: 4px 8px;
-    background-color: transparent;
-    border: 3px solid $emphasis-color;
-    cursor: pointer;
-    transition: 0.5s;
-
-    &.disabled {
-      border-color: grey;
-      pointer-events: none;
-    }
-
-    & label {
-      transition: 0.5s;
-      cursor: pointer;
-    }
-
-    &:hover {
-      box-shadow: inset 0 0 0 10px $emphasis-color;
-      background-color: $emphasis-color;
-
-      & label {
-        color: $text-color-light;
-      }
-    }
-  }
 }
 
 .informacion {
   width: 30%;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   padding: 10px 20px;
 
-  &-cabecera {
-    padding: 10px 0;
-  }
-
   &-contacto {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     margin: 20px 0;
 
     & div {
       width: 70%;
-      display: flex;
       justify-content: space-between;
       align-items: center;
       margin: 5px 0;
+    }
+  }
 
-      .importante {
-        font-weight: 700;
+  &-redes {
+    margin: 20px 0;
+
+    & a {
+      align-items: center;
+    }
+
+    .icon {
+      color: $emphasis-color;
+      font-size: 30px;
+      margin-right: 5px;
+    }
+
+    .enlaces {
+      cursor: pointer;
+
+      &:hover {
+        color: $emphasis-color;
+        text-decoration: underline;
       }
     }
   }
+}
+
+.contacto-cabecera,
+.informacion-cabecera {
+  padding: 10px 0;
+}
+
+.input,
+.textarea {
+  margin-left: 5px;
+  padding: 3px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid $emphasis-color;
+  transition: 0.5s;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 2px $emphasis-color;
+    color: $emphasis-color;
+
+    & ~ .input-icon {
+      box-shadow: 0 2px $emphasis-color;
+      color: $emphasis-color;
+    }
+  }
+}
+
+.checkbox,
+.radiobutton {
+  display: none;
+}
+
+.checkbox-icon,
+.radiobutton-icon {
+  font-size: 40px;
+  color: $text-color-dark;
+  padding: 5px;
+  transition: 0.5s;
+}
+
+.dato,
+.tipo {
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 10px;
 }
