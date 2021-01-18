@@ -16,9 +16,6 @@
 }
 
 .contenedor {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   margin: 60px 0 20px 0;
 }
@@ -34,7 +31,6 @@
   padding: 15px 30px;
   position: fixed;
   z-index: 1;
-  display: flex;
   justify-content: space-around;
   align-items: center;
 

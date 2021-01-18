@@ -5,7 +5,6 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
-
 import { textValidator } from 'src/app/modules/shared/validators/text/text.validator';
 
 @Directive({

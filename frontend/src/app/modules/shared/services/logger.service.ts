@@ -10,16 +10,31 @@ import { StyleType } from 'src/app/modules/shared/enums/style-type';
   providedIn: 'root',
 })
 export class LoggerService extends CrudService<Log> {
+  /**
+   * Método para crear un console.log personalizado de tipo Success
+   * @param item: Log
+   * @return void
+   */
   private static successLog(item: Log): void {
     const STYLE = StyleType.SUCCESS;
     console.log(`%cCÓDIGO: ${item.code} - ${item.error}`, STYLE);
   }
 
+  /**
+   * Método para crear un console.log personalizado de tipo Error
+   * @param item: Log
+   * @return void
+   */
   private static errorLog(item: Log): void {
     const STYLE = StyleType.ERROR;
     console.log(`%cCÓDIGO: ${item.code} - ${item.error}`, STYLE);
   }
 
+  /**
+   * Método para crear un console.log personalizado de tipo Warning
+   * @param item: Log
+   * @return void
+   */
   private static warningLog(item: Log): void {
     const STYLE = StyleType.WARNING;
     console.log(`%cCÓDIGO: ${item.code} - ${item.error}`, STYLE);
@@ -30,10 +45,21 @@ export class LoggerService extends CrudService<Log> {
     this.withUrlPrefix(PREFIX.log);
   }
 
+  /**
+   * Método para insertar Logs en la BD
+   * @param item: Log
+   * @return void
+   */
   insert(item: Log): void {
     this.create(item).subscribe();
   }
 
+  /**
+   * Método para insertar console.log de los Logs en la BD
+   * @param item: Log
+   * @param type: string
+   * @return void
+   */
   console(item: Log, type: string): void {
     if (type === CodeType.ERROR) {
       LoggerService.errorLog(item);

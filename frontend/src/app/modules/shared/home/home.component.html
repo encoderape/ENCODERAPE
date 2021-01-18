@@ -1,70 +1,74 @@
-<div class="main">
-  <div class="main-contenedor">
-    <div class="main-contenedor-arriba">
-      <img class="imagen" src="assets/img/mainTop.png" alt="" />
-      <div class="opcion">
-        <h1 class="opcion-titulo">HAGAMOS REALIDAD TU PROYECTO</h1>
-        <button class="opcion-boton" routerLink="contacto">CONTACTO</button>
+<div class="contenedor flex-column w-100">
+  <div class="contenedor-cabecera relative">
+    <img class="portada w-100" src="assets/img/mainTop.png" alt="" />
+    <div class="contenedor-titulo w-100">
+      <h1 class="title">HAGAMOS REALIDAD TU PROYECTO</h1>
+      <button class="boton" routerLink="/contacto">
+        <label>CONTACTO</label>
+      </button>
+    </div>
+  </div>
+  <div class="contenedor-servicios flex-column content-center w-100">
+    <h2>NUESTROS SERVICIOS</h2>
+    <div class="items flex-row">
+      <div class="item flex-column content-center">
+        <i class="fas fa-laptop icon"></i>
+        <h3>Desarrollo Web</h3>
+      </div>
+      <div class="item flex-column content-center">
+        <i class="fas fa-mobile icon"></i>
+        <h3>Desarrollo Móvil</h3>
+      </div>
+      <div class="item flex-column content-center">
+        <i class="fas fa-pencil-ruler icon"></i>
+        <h3>UX/UI</h3>
+      </div>
+      <div class="item flex-column content-center">
+        <i class="fas fa-tools icon"></i>
+        <h3>Mantenimiento</h3>
       </div>
     </div>
-    <div class="main-contenedor-servicios">
-      <h2>NUESTROS SERVICIOS</h2>
-      <div class="items">
-        <div class="item">
-          <i class="fas fa-laptop icono"></i>
-          <h3 class="texto">Desarrollo Web</h3>
-        </div>
-        <div class="item">
-          <i class="fas fa-mobile icono"></i>
-          <h3 class="texto">Desarrollo Móvil</h3>
-        </div>
-        <div class="item">
-          <i class="fas fa-pencil-ruler icono"></i>
-          <h3 class="texto">UX/UI</h3>
-        </div>
-        <div class="item">
-          <i class="fas fa-tools icono"></i>
-          <h3 class="texto">Mantenimiento</h3>
-        </div>
-      </div>
-      <button class="boton" routerLink="servicios">Servicios</button>
+    <button class="boton" routerLink="servicios">
+      <label>Servicios</label>
+    </button>
+  </div>
+  <div class="contenedor-clientes flex-column content-center w-100">
+    <h2 class="title">CLIENTES</h2>
+    <div class="contenedor-logos flex-row">
+      <img src="assets/img/logo.png" alt="Logotipo" />
     </div>
-    <div class="main-contenedor-clientes">
-      <h2 class="titulo">CLIENTES</h2>
-      <div class="contenedor-logos">
-        <img src="assets/img/logo.png" alt="Logotipo" />
+  </div>
+  <div class="contenedor-equipo flex-column">
+    <div class="flex-row">
+      <img class="imagen-equipo" src="assets/img/main2.jpg" alt="" />
+      <div class="bloque flex-column content-center">
+        <h2 class="title">
+          Un cliente satisfecho es la mejor estrategia de negocio.
+        </h2>
+        <h3 class="subtitle">
+          jhsjhajhbhjbchjbjhahbshjbjcbhjabjshjcbjhavshjcjabsjcjahschbhjckadbhjasdkhahdsgfkjhGSDGFHDSFG
+        </h3>
       </div>
     </div>
-    <div class="main-contenedor-equipo">
-      <div class="bloque1">
-        <img class="imagen" src="assets/img/main2.jpg" alt="" />
-        <div class="contenedor">
-          <h2 class="titulo">
-            Un cliente satisfecho es la mejor estrategia de negocio.
-          </h2>
-          <h3 class="subtitulo">
-            jhsjhajhbhjbchjbjhahbshjbjcbhjabjshjcbjhavshjcjabsjcjahschbhjckadbhjasdkhahdsgfkjhGSDGFHDSFG
-          </h3>
-        </div>
-      </div>
-      <div class="bloque2">
-        <img class="imagen" src="assets/img/main2-1.jpg" alt="" />
-        <div class="contenedor">
-          <h2 class="titulo">
-            Estudiamos y analizamos las ofertas para ofrecer un servicio de
-            calidad.
-          </h2>
-          <h3 class="subtitulo">
-            jhsjhajhbhjbchjbjhahbshjbjcbhjabjshjcbjhavshjcjabsjcjahschbhjckadbhjasdkhahdsgfkjhGSDGFHDSFG
-          </h3>
-        </div>
+    <div class="flex-row-reverse">
+      <img class="imagen-equipo" src="assets/img/main2-1.jpg" alt="" />
+      <div class="bloque flex-column content-center">
+        <h2 class="title">
+          Estudiamos y analizamos las ofertas para ofrecer un servicio de
+          calidad.
+        </h2>
+        <h3 class="subtitle">
+          jhsjhajhbhjbchjbjhahbshjbjcbhjabjshjcbjhavshjcjabsjcjahschbhjckadbhjasdkhahdsgfkjhGSDGFHDSFG
+        </h3>
       </div>
     </div>
-    <div class="main-contenedor-bajo">
-      <h2>HAGAMOS REALIDAD TU PROYECTO</h2>
-      <div>
-        <button class="boton" routerLink="contacto">CONTACTO</button>
-      </div>
+  </div>
+  <div class="contenedor-resumen flex-column">
+    <h2>HAGAMOS REALIDAD TU PROYECTO</h2>
+    <div>
+      <button class="boton" routerLink="contacto">
+        <label>CONTACTO</label>
+      </button>
     </div>
   </div>
 </div>

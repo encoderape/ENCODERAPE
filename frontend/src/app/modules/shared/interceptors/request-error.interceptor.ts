@@ -8,7 +8,10 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { CodeType } from 'src/app/modules/shared/enums/code-type';
+import { MessageType } from 'src/app/modules/shared/enums/message-type';
 import { ResponseType } from 'src/app/modules/shared/enums/response-type';
+import { ToastMessageType } from 'src/app/modules/shared/enums/toast-message-type';
 import { ToastService } from 'src/app/modules/shared/services/toast.service';
 import { LoggerService } from 'src/app/modules/shared/services/logger.service';
 import { Log } from 'src/app/modules/shared/models/log';
@@ -31,34 +34,27 @@ export class RequestErrorInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((err: HttpErrorResponse) => {
         if (err.status === ResponseType.BAD_REQUEST) {
-          log.code = 400;
-          log.error =
-            'La URL a la que se ha intentado hacer la petición está mal.';
+          log.code = ResponseType.BAD_REQUEST;
+          log.error = MessageType.BAD_REQUEST;
           this.loggerService.insert(log);
-          this.loggerService.console(log, 'red');
-          this.toastService.callErrorToast(
-            'Petición equivocada, ponte en contacto con nosotros si el problema persiste.'
-          );
+          this.loggerService.console(log, CodeType.ERROR);
+          this.toastService.callErrorToast(ToastMessageType.BAD_REQUEST);
           return throwError(err);
         }
         if (err.status === ResponseType.NOT_FOUND) {
-          log.code = 404;
-          log.error = 'Se ha intentado buscar algo que no existe.';
+          log.code = ResponseType.NOT_FOUND;
+          log.error = MessageType.NOT_FOUND;
           this.loggerService.insert(log);
-          this.loggerService.console(log, 'red');
-          this.toastService.callErrorToast(
-            'No se ha podido encontrar lo que buscas, ponte en contacto con nosotros si el problema persiste.'
-          );
+          this.loggerService.console(log, CodeType.ERROR);
+          this.toastService.callErrorToast(ToastMessageType.NOT_FOUND);
           return throwError(err);
         }
         if (err.status === ResponseType.SERVER_ERROR) {
-          log.code = 500;
-          log.error = 'Ha habido un error interno del servidor.';
+          log.code = ResponseType.SERVER_ERROR;
+          log.error = MessageType.SERVER_ERROR;
           this.loggerService.insert(log);
-          this.loggerService.console(log, 'red');
-          this.toastService.callErrorToast(
-            'Error interno del servidor, ponte en contacto con nosotros si el problema persiste.'
-          );
+          this.loggerService.console(log, CodeType.ERROR);
+          this.toastService.callErrorToast(ToastMessageType.SERVER_ERROR);
           return throwError(err);
         }
       })

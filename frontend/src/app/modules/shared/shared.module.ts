@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { SharedRouting } from 'src/app/modules/shared/shared.routing';
 import { HomeComponent } from 'src/app/modules/shared/home/home.component';
 import { PageNotFoundComponent } from 'src/app/modules/shared/page-not-found/page-not-found.component';
@@ -18,32 +17,32 @@ import { PhoneDirective } from './validators/phone/phone.directive';
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    PageNotFoundComponent,
-    HeaderComponent,
-    NavigatorComponent,
+    ErrorComponent,
     FooterComponent,
-    NumDirective,
-    TextDirective,
-    EmailDirective,
+    HeaderComponent,
+    HomeComponent,
+    InfoComponent,
+    NavigatorComponent,
+    PageNotFoundComponent,
     SuccessfulComponent,
     WarningComponent,
-    InfoComponent,
-    ErrorComponent,
+    EmailDirective,
+    NumDirective,
     PhoneDirective,
+    TextDirective,
   ],
   exports: [
-    HeaderComponent,
-    NavigatorComponent,
+    ErrorComponent,
     FooterComponent,
-    NumDirective,
-    TextDirective,
-    EmailDirective,
+    HeaderComponent,
+    InfoComponent,
+    NavigatorComponent,
     SuccessfulComponent,
     WarningComponent,
-    ErrorComponent,
-    InfoComponent,
+    EmailDirective,
+    NumDirective,
     PhoneDirective,
+    TextDirective,
   ],
   imports: [CommonModule, SharedRouting],
 })

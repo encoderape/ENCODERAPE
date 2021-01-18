@@ -9,7 +9,10 @@ import {
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { MessageType } from 'src/app/modules/shared/enums/message-type';
+import { CodeType } from 'src/app/modules/shared/enums/code-type';
 import { ResponseType } from 'src/app/modules/shared/enums/response-type';
+import { ToastMessageType } from 'src/app/modules/shared/enums/toast-message-type';
 import { ToastService } from 'src/app/modules/shared/services/toast.service';
 import { LoggerService } from 'src/app/modules/shared/services/logger.service';
 import { Log } from 'src/app/modules/shared/models/log';
@@ -33,16 +36,16 @@ export class RequestSuccessInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       tap((event: HttpHeaderResponse) => {
         if (event.status === ResponseType.OK) {
-          log.code = 200;
-          log.error = 'Datos obtenidos correctamente.';
-          this.loggerService.console(log, 'green');
+          log.code = ResponseType.OK;
+          log.error = MessageType.OK;
+          this.loggerService.console(log, CodeType.SUCCESS);
           return;
         }
         if (event.status === ResponseType.CREATED) {
-          log.code = 201;
-          log.error = 'Datos insertados correctamente.';
-          this.loggerService.console(log, 'green');
-          this.toastService.callSuccessfulToast('Formulario enviado con éxito');
+          log.code = ResponseType.CREATED;
+          log.error = MessageType.CREATED;
+          this.loggerService.console(log, CodeType.SUCCESS);
+          this.toastService.callSuccessfulToast(ToastMessageType.CREATED);
           this.router.navigate(['/']);
         }
       })

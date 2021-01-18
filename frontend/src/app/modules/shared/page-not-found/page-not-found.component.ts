@@ -11,6 +11,10 @@ export class PageNotFoundComponent implements OnInit {
 
   constructor(private router: Router) {}
 
+  /**
+   * Método que coge el mensaje de redirección
+   * @return string
+   */
   public get redirectMessage(): string {
     if (this.redirectCount <= 0) {
       return 'Redireccionando ...';
@@ -22,6 +26,10 @@ export class PageNotFoundComponent implements OnInit {
     this.redirect();
   }
 
+  /**
+   * Método que redirige al Home pasados unos segundos
+   * @return void
+   */
   redirect(): void {
     setInterval(() => {
       this.redirectCount--;

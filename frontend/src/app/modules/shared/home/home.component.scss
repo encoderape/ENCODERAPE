@@ -1,206 +1,87 @@
 @import "src/app/styles";
 
-.main {
-  width: 100%;
+.contenedor {
+  margin: 0;
+}
 
-  &-contenedor {
-    display: flex;
-    flex-direction: column;
+.contenedor-cabecera {
+  height: 600px;
+
+  .portada {
+    height: 600px;
+    opacity: 0.7;
+  }
+
+  .contenedor-titulo {
+    position: absolute;
+    top: 40%;
+    text-align: center;
+  }
+}
+
+.contenedor-servicios {
+  margin: 50px 0 60px 0;
+
+  .items {
     align-items: center;
+    width: 80%;
+    margin: 70px 0 70px 0;
 
-    &-arriba {
-      position: relative;
-      height: 600px;
-      .imagen {
-        width: 100%;
-        height: 600px;
-        opacity: 0.7;
-      }
-      .opcion {
-        position: absolute;
-        top: 40%;
-        width: 100%;
-        text-align: center;
+    .item {
+      margin: auto;
+      cursor: pointer;
+      transition: 0.5s;
 
-        &-titulo {
-          color: $text-color-dark;
-        }
-
-        &-boton {
-          background: $emphasis-color;
-          color: $text-color-light;
-          border: none;
-          margin-top: 50px;
-          padding: 10px 25px;
-          cursor: pointer;
-        }
-        &-boton:hover {
-          background-color: $emphasis-color-hover;
-        }
-      }
-    }
-
-    &-servicios {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin: 50px 0 60px 0;
-
-      .items {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 80%;
-        margin: 70px 0 70px 0;
-
-        .item {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          margin: auto;
-          cursor: pointer;
-          opacity: 0.5;
-          transition: 0.5s;
-
-          .icono {
-            font-size: 60px;
-            margin-bottom: 30px;
-            color: $text-color-dark;
-            transition: 0.5s;
-          }
-          .texto {
-            transition: 0.5s;
-          }
-        }
-        .item:hover {
-          opacity: 1;
-
-          .icono,
-          .texto {
-            color: $emphasis-color;
-          }
-        }
+      .icon {
+        font-size: 60px;
+        margin-bottom: 30px;
+        color: $text-color-dark;
       }
 
-      .boton {
-        margin-top: 20px;
-        padding: 4px 8px;
-        background-color: transparent;
-        border: 3px solid $emphasis-color;
-        cursor: pointer;
-        transition: 0.5s;
+      &:hover {
+        opacity: 1;
 
-        &:hover {
-          box-shadow: inset 0 0 0 10px $emphasis-color;
-          background-color: $emphasis-color;
-          color: $text-color-light;
-        }
-      }
-    }
-
-    &-clientes {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      color: $text-color-light;
-      background-color: $components-dark;
-      padding-top: 60px;
-      padding-bottom: 60px;
-
-      .titulo {
-        color: $text-color-light;
-      }
-      .contenedor-logos {
-        margin-top: 30px;
-        display: flex;
-        justify-content: center;
-        & img {
-          width: 20%;
-        }
-      }
-    }
-
-    &-equipo {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-
-      .bloque1 {
-        display: flex;
-        flex-direction: row;
-
-        .contenedor {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          width: 50%;
-        }
-        .titulo {
+        .icon,
+        h3 {
           color: $emphasis-color;
-          text-align: center;
-        }
-        .subtitulo {
-          color: $text-color-dark;
-          margin-top: 30px;
-        }
-        .imagen {
-          width: 50.3%;
-          height: 500px;
-          margin-right: 20px;
-        }
-      }
-      .bloque2 {
-        display: flex;
-        flex-direction: row-reverse;
-
-        .contenedor {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          width: 50%;
-        }
-        .titulo {
-          color: $emphasis-color;
-        }
-        .subtitulo {
-          color: $text-color-dark;
-          margin-top: 30px;
-        }
-        .imagen {
-          width: 50.4%;
-          height: 500px;
-        }
-      }
-    }
-
-    &-bajo {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      margin-top: 70px;
-      margin-bottom: 70px;
-
-      .boton {
-        margin-top: 50px;
-        padding: 4px 8px;
-        background-color: transparent;
-        border: 3px solid $emphasis-color;
-        cursor: pointer;
-        transition: 0.5s;
-
-        &:hover {
-          box-shadow: inset 0 0 0 10px $emphasis-color;
-          background-color: $emphasis-color;
-          color: $text-color-light;
         }
       }
     }
   }
+}
+
+.contenedor-clientes {
+  color: $text-color-light;
+  background-color: $components-dark;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  .contenedor-logos {
+    margin-top: 30px;
+    justify-content: center;
+
+    & img {
+      width: 20%;
+    }
+  }
+}
+
+.contenedor-equipo {
+  text-align: center;
+
+  & div {
+    .imagen-equipo {
+      width: 50%;
+      height: 500px;
+    }
+
+    .bloque {
+      width: 50%;
+    }
+  }
+}
+
+.contenedor-resumen {
+  text-align: center;
+  margin: 70px 0;
 }

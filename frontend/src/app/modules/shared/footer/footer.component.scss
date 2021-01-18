@@ -1,29 +1,16 @@
 @import "src/app/styles";
 
 .footer {
-  width: 100%;
   background-color: $components-dark;
   display: flex;
   flex-direction: column;
-  align-items: center;
   box-shadow: 0 -3px 3px $border-color;
 
   .links {
-    display: flex;
     margin-top: 10px;
 
-    @include mobileL {
-      flex-direction: column;
-    }
-
     &-group {
-      display: flex;
-      flex-direction: column;
       margin: 5px 20px;
-
-      @include mobileL {
-        margin-top: 20px;
-      }
 
       & h3 {
         color: $text-color-light;
@@ -48,13 +35,9 @@
     }
 
     &-group-info {
-      display: flex;
-      flex-direction: column;
       margin: 15px 0 0 35px;
 
       & .redes {
-        display: flex;
-
         & a {
           text-decoration: none;
           margin: 0 3px;
@@ -73,7 +56,6 @@
   }
 
   .info {
-    display: flex;
     justify-content: space-between;
     align-items: center;
     width: 90%;

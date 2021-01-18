@@ -1,14 +1,9 @@
 @import "src/app/styles";
 
 .cabecera {
-  width: 100%;
   background-color: $components-dark;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   &-contenedor {
-    display: flex;
     justify-content: center;
 
     & img {

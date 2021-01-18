@@ -13,6 +13,10 @@ export class TitleService {
     private activatedRoute: ActivatedRoute
   ) {}
 
+  /**
+   * Método para cambiar el título en cada página
+   * @return void
+   */
   initializeTitleService(): void {
     this.router.events
       .pipe(filter((event: any) => event instanceof NavigationEnd))

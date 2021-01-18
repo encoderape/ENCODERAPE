@@ -5,7 +5,6 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
-
 import { emailValidator } from 'src/app/modules/shared/validators/email/email.validator';
 
 @Directive({

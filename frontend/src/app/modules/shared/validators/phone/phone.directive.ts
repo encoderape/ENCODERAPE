@@ -5,7 +5,6 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
-
 import { phoneValidator } from 'src/app/modules/shared/validators/phone/phone.validator.';
 
 @Directive({
